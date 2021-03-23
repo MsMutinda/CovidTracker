@@ -4,13 +4,16 @@ from django.db import models
 
 # Create your models here.
 class DataMap(models.Model):
-    label = ['World statistics']
-
     # world map
+    def data_map(self):
+        label = ['Infection statistics']
+        map_label = ['Country map']
+
+
 
     # options to filter display to be country-based
-    # def data_filter:
-    filtered = models.CharField(max_length=50, help_text='Filter data', default='Filter results')
+    def data_filter(self):
+        filtered = models.CharField(max_length=50, help_text='Filter data', default='Filter results')
 
 
 class Health(models.Model):
@@ -26,7 +29,7 @@ class Travel(models.Model):
     travelqn3 = models.CharField(max_length=50)
 
 
-class Feedback(models.Model):
+class Result(models.Model):
     choice1 = models.TextField(max_length=250)
     choice2 = models.TextField(max_length=250)
     choice3 = models.TextField(max_length=250)
