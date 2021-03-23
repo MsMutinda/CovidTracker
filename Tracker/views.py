@@ -1,18 +1,16 @@
 from django.http import HttpResponse
+from django.shortcuts import render
 import requests
 import json
-
-
-# Create your views here.
-def index(request):
-    return HttpResponse('Get the latest covid-19 statistics and exposure predictions here')
+from django.template.context_processors import csrf
+from django import template
 
 
 def stats(request):
-    # resp = requests.request('GET', url='https://api.covid19api.com')
-    resp = requests.get('https://api.covid19api.com/summary')
+    resp = requests.get('https://api.covid19api.com/country/ke').json()
     # resp_data = json.loads(resp)
-    # resp_data = resp.json()
 
-    return HttpResponse(resp)
+    c = {'resp': resp}
+    c.update(csrf(request))
+    return render(request, 'Tracker/home.html', c)
 
