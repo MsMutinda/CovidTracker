@@ -1,19 +1,25 @@
 from django.db import models
-# from django.http import HttpResponse
+import json
+import requests
 
 
-# Create your models here.
+class GetData(models.Model):
+    resp = json.dumps(requests.get('https://api.covid19api.com/summary').json(), sort_keys=True, indent=4)
+    with open('resp.json', 'w') as outputfile:
+        json.dump(resp, outputfile)
+        # for val in resp_file:
+            # print(val['Country'], val['Date'], val['NewConfirmed'], val['NewDeaths'], val['NewRecovered'], val['TotalConfirmed'])
+
+
 class DataMap(models.Model):
-    # world map
-    def data_map(self):
-        label = ['Infection statistics']
-        map_label = ['Country map']
+    # visualize data on world map
+    label = ['Infection statistics']
+    map_label = ['Country map']
 
 
-
-    # options to filter display to be country-based
-    def data_filter(self):
-        filtered = models.CharField(max_length=50, help_text='Filter data', default='Filter results')
+# options to filter display to be country-based
+class DataFilter(models.Model):
+    filtered = models.CharField(max_length=50, help_text='Filter data', default='Filter results')
 
 
 class Health(models.Model):
