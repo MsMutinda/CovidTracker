@@ -2,18 +2,30 @@ from django.db import models
 import json
 import requests
 
+resp = json.dumps(requests.get('https://api.covid19api.com/summary').json(), sort_keys=True, indent=4)
+
 
 class GetData(models.Model):
-    resp = json.dumps(requests.get('https://api.covid19api.com/summary').json(), sort_keys=True, indent=4)
+    # def __init__(self, jdata):
+    # self.__dict__ = json.loads(jdata)
+
     with open('resp.json', 'w') as outputfile:
         json.dump(resp, outputfile)
         # for val in resp_file:
-            # print(val['Country'], val['Date'], val['NewConfirmed'], val['NewDeaths'], val['NewRecovered'], val['TotalConfirmed'])
+        # print(val['Country'], val['Date'], val['NewConfirmed'], val['NewDeaths'], val['NewRecovered'], val['TotalConfirmed'])
+
+
+# data_object = GetData(JSONData)
+# print(data_object)
+
+
+class Tabular(models.Model):
+    data_table = ''
 
 
 class DataMap(models.Model):
     # visualize data on world map
-    label = ['Infection statistics']
+    data_label = ['Infection statistics']
     map_label = ['Country map']
 
 
