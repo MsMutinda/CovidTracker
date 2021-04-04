@@ -27,8 +27,15 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Tracker.apps.TrackerConfig',
+    # 'djangobars',
 ]
 
+# HANDLEBARS_LOADERS = (
+#     'djangobars.template.loaders.filesystem.Loader',
+#     'djangobars.template.loaders.app_directories.Loader',
+# )
+
+# HANDLEBARS_DIRS = []
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

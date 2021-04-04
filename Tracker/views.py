@@ -7,10 +7,10 @@ import json
 def stats(request):
     # resp_data = GetData.objects.all()
     with open('resp.json', 'r') as f:
-        resp_file = json.load(f)
+        respfile = json.load(f)
     c = {
         'resp_data': GetDataModel.objects.all(),
-        'resp_file': resp_file
+        'respfile': respfile
         }
     c.update(csrf(request))
     return render(request, 'Tracker/home.html', c)

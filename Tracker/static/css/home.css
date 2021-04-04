@@ -1,0 +1,29 @@
+.card-img-top {
+        width: 300px;
+}
+
+.card {
+        margin: 0 auto;
+        float: none;
+        margin-bottom: 10px;
+         font-size:14px;
+         color: #ffffff;
+        background-color: #5271C2;
+}
+
+.card-horizontal {
+    display: flex;
+    flex: 1 1 auto;
+}
+
+.number{
+    color: #aa9e5c;
+    margin-left:5px;
+    font-size:14px;
+    font-weight: bold;
+}
+
+thead{
+    background-color: #3e5eb3;
+    color: #ffffff
+}
