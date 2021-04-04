@@ -18,7 +18,6 @@
                     <div class="card-body">
                           <h4 class="card-title">Global data </h4>
 
-
                         <template id="glob-template">
                             {{#each globdata}}
                                 <div class="row">
@@ -28,7 +27,7 @@
                                     </div>
                                     {{/each}}
                         </template>
-<!--                        {% endverbatim %}-->
+
                     </div>
                 </div>
             </div>
@@ -47,7 +46,7 @@
     </tr>
   </thead>
   <tbody>
-<!--  {% verbatim %}-->
+
   <template id="state-template">
         {{#each respfile.Countries}}
     <tr>
@@ -59,7 +58,7 @@
     </tr>
     {{/each}}
   </template>
-<!--  {% endverbatim %}-->
+
   </tbody>
 </table>
 </div>
@@ -74,6 +73,5 @@
 
     <script src="{% static '/js/handlebars.js' %}" type="text/javascript"></script>
 
-{% endblock content %}
 </body>
 </html>
