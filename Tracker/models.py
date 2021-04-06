@@ -1,14 +1,12 @@
 from django.db import models
-import json
-import requests
+# import json
+# import requests
 
 
-resp = json.dumps(requests.get('https://api.covid19api.com/summary').json(), sort_keys=True, indent=4)
-
-
-class GetData(models.Model):
-    with open('resp.json', 'w') as outputfile:
-        json.dump(resp, outputfile)
+# class GetData(models.Model):
+#     resp = json.dumps(requests.get('https://api.covid19api.com/summary').json(), sort_keys=True, indent=4)
+#     with open('resp.json', 'w') as outputfile:
+#         json.dump(resp, outputfile)
 
 
 class Tabular(models.Model):

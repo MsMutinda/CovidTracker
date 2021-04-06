@@ -6,62 +6,43 @@
     <title>Covid Tracker</title>
     {% load static %}
     <link href="{% static 'css/home.css' %}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/df_style.css' %}">
+<!--        <script src="{% static '/js/processHbars.js' %}" type="text/javascript"></script>-->
 </head>
+
 <body>
-    <h3> Latest covid-19 statistics and exposure predictions here </h3>
+<p> **Navbar** </p>
+ <h3 class="text-center pt-4"><b>Latest covid-19 statistics and exposure predictions </b></h3>
     <div class="container-fluid">
     <div class="row">
         <div class="col-12 mt-3">
             <div class="card">
                 <div class="card-horizontal">
-
                     <div class="card-body">
-                          <h4 class="card-title">Global data </h4>
-
-                        <template id="glob-template">
-                            {{#each globdata}}
-                                <div class="row">
-                                    <div class="col-12">
-                                       <p class="card-text"> {{@key}} <span class="number"> {{this}}.</span></p>
-                                   </div>
-                                    </div>
-                                    {{/each}}
-                        </template>
-
+                          <h3 class="card-title" style="font-size: 32px;"><strong>Global statistics </strong></h3>
+                                <div style="font-size: 17px;">
+                                    <p><b>Date:</b> {{respdata1.Global.Date}}</p>
+                                    <p><b>New Confirmed Cases: </b> {{respdata1.Global.NewConfirmed}}</p>
+                                    <p><b>New Deaths: </b> {{respdata1.Global.NewDeaths}}</p>
+                                    <p><b>New Recoveries: </b>{{respdata1.Global.NewRecovered}}</p>
+                                    <p><b>Total Confirmed:</b> {{respdata1.Global.TotalConfirmed}}</p>
+                                    <p><b>Total Deaths: </b>{{respdata1.Global.TotalDeaths}}</p>
+                                    <p><b>Total Recovered:</b> {{respdata1.Global.TotalRecovered}}</p>
+                                </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <h1>Data per country</h1>
 
-    <table class="table responsive" id="sort">
-  <thead>
-    <tr>
-      <th scope="col">Country</th>
-      <th scope="col">New cases</th>
-      <th scope="col">New Death</th>
-       <th scope="col">Total death</th>
-       <th scope="col">Total Recovered</th>
-    </tr>
-  </thead>
-  <tbody>
+    <br>
+        <h1 style="font-size: 32px;"><strong>Data per country </strong></h1>
+        <section>
+                {{df_obj|safe}}
+            </section>
 
-  <template id="state-template">
-        {{#each respfile.Countries}}
-    <tr>
-      <td>{{Country}}</td>
-      <td>{{NewConfirmed}}</td>
-      <td>{{NewDeaths}}</td>
-      <td>{{TotalDeaths}}</td>
-      <td>{{TotalRecovered}}</td>
-    </tr>
-    {{/each}}
-  </template>
+    </div>
 
-  </tbody>
-</table>
-</div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 
@@ -71,7 +52,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.12/handlebars.min.js" charset="utf-8"></script>
 
-    <script src="{% static '/js/handlebars.js' %}" type="text/javascript"></script>
 
 </body>
+
 </html>
