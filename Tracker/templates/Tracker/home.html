@@ -11,7 +11,17 @@
 </head>
 
 <body>
-<p> **Navbar** </p>
+<div>
+    <ul class="float-right list-unstyled font-weight-bold">
+        <li>Home</li>
+        <li>Diagnosis</li>
+        <li>Health Contacts</li>
+        <li>User Profile</li>
+    </ul>
+</div>
+
+<p> **some logo or image** <br> **DO styling and page layout** </p>
+
  <h3 class="text-center pt-4"><b>Latest covid-19 statistics and exposure predictions </b></h3>
     <div class="container-fluid">
     <div class="row">
@@ -35,8 +45,10 @@
         </div>
     </div>
 
-    <br>
-        <h1 style="font-size: 32px;"><strong>Data per country </strong></h1>
+    <br><br>
+        <p class="float-right" style="position: relative; right: 100px;"><strong>Filter by country: </strong><img src="" alt=""></p>
+            <br>
+        <h1 style="font-size: 32px;"><strong>Data per country </strong></h1><br>
         <section>
                 {{df_obj|safe}}
             </section>
