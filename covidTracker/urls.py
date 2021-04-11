@@ -22,7 +22,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('', RedirectView.as_view(url='Tracker/', permanent=True)),  # set root url
+    path('', RedirectView.as_view(url='Tracker/')),  # set root url
     path('admin/', admin.site.urls),
     path('Tracker/', include('Tracker.urls'))
 ]

@@ -5,4 +5,5 @@
 - CSS/Bootstrap
 - Python/Django
 - Javascript
+- Postman Covid-19 API
 

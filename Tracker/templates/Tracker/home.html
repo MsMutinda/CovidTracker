@@ -13,10 +13,11 @@
 <body>
 <div>
     <ul class="float-right list-unstyled font-weight-bold">
-        <li>Home</li>
-        <li>Diagnosis</li>
-        <li>Health Contacts</li>
-        <li>User Profile</li>
+        <li><a href="#">Home</a><li>
+        <li><a href="#">Covid-19 Symptoms</a><li>
+        <li><a href="#">Diagnosis</a><li>
+        <li><a href="#">Emergency Contacts</a><li>
+        <li><a href="#">User Profile</a><li>
     </ul>
 </div>
 
@@ -46,8 +47,11 @@
     </div>
 
     <br><br>
-        <p class="float-right" style="position: relative; right: 100px;"><strong>Filter by country: </strong><img src="" alt=""></p>
-            <br>
+    <div class="float-right" style="position: relative; right: 90px;">
+        <input class='btn-lg' id="filter-data" name='search_item' type="search" style='border-radius: 6px;' size='15px' placeholder="Filter by country">
+        <button class="btn-lg" type="button" onclick="send_value()" href="{% url 'stats' %}">Search</button>
+    </div>
+            <br><br>
         <h1 style="font-size: 32px;"><strong>Data per country </strong></h1><br>
         <section>
                 {{df_obj|safe}}

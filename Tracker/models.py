@@ -1,4 +1,5 @@
 from django.db import models
+from Tracker.views import stats
 # import json
 # import requests
 
@@ -9,10 +10,6 @@ from django.db import models
 #         json.dump(resp, outputfile)
 
 
-class Tabular(models.Model):
-    data_table = ''
-
-
 class DataMap(models.Model):
     # visualize data on world map
     data_label = ['Infection statistics']
@@ -21,7 +18,8 @@ class DataMap(models.Model):
 
 # options to filter display to be country-based
 class DataFilter(models.Model):
-    filtered = models.CharField(max_length=50, help_text='Filter data', default='Filter results')
+    view = stats
+    # filtered = models.CharField(max_length=20, help_text='Filter data', choices=stats.df_obj, default='Filter results')
 
 
 class Health(models.Model):
