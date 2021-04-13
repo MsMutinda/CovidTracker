@@ -2,8 +2,9 @@ from django.shortcuts import render
 from Tracker.models import *
 from django.template.context_processors import csrf
 from django.views.decorators.csrf import csrf_exempt
-import bs4 as beauty
 import json
+import urllib.request
+from bs4 import BeautifulSoup as beauty
 import requests
 import pandas as pd
 pd.set_option('display.width', 1000)
@@ -50,7 +51,9 @@ def filter_country(request):
 
 
 def covid_symptoms(request):
-    symptoms = requests.get('https://www.cdc.gov/coronavirus/2019-ncov/symptoms-testing/symptoms.html').json()
+    # link1 = "https://www.cdc.gov/coronavirus/2019-ncov/symptoms-testing/symptoms.html"
+    symptoms1 = requests.get("https://covid19-update-api.herokuapp.com/api/v1/articles/symptoms")
+    symptoms = json.loads(symptoms1.json())
     c = {
         'symptoms': symptoms
     }

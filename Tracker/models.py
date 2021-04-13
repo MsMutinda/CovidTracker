@@ -19,25 +19,20 @@ class DataMap(models.Model):
 # options to filter display to be country-based
 class DataFilter(models.Model):
     view = stats
+    print('Filter based on location')
     # filtered = models.CharField(max_length=20, help_text='Filter data', choices=stats.df_obj, default='Filter results')
 
 
 class Health(models.Model):
     # return HttpResponse('Enter details on your health history here')
-    healthqn1 = models.CharField(max_length=50)
-    healthqn2 = models.CharField(max_length=50)
-    healthqn3 = models.CharField(max_length=50)
-    healthqn3 = models.CharField(max_length=50)
+    healthqn1 = models.CharField(max_length=150, default='Question 1')
+    healthqn2 = models.CharField(max_length=150, default='Question 2')
+    healthqn3 = models.CharField(max_length=150, default='Question 3')
+    healthqn4 = models.CharField(max_length=150, default='Question 4')
 
 
 class Travel(models.Model):
-    travelqn1 = models.CharField(max_length=50)
-    travelqn2 = models.CharField(max_length=50)
-    travelqn3 = models.CharField(max_length=50)
-    travelqn3 = models.CharField(max_length=50)
-
-
-class Result(models.Model):
-    choice1 = models.TextField(max_length=250)
-    choice2 = models.TextField(max_length=250)
-    choice3 = models.TextField(max_length=250)
+    travelqn1 = models.CharField(max_length=150, default='Question 1')
+    travelqn2 = models.CharField(max_length=150, default='Question 2')
+    travelqn3 = models.CharField(max_length=150, default='Question 3')
+    travelqn4 = models.CharField(max_length=150, default='Question 4')
