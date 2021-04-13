@@ -27,11 +27,13 @@ class Health(models.Model):
     healthqn1 = models.CharField(max_length=50)
     healthqn2 = models.CharField(max_length=50)
     healthqn3 = models.CharField(max_length=50)
+    healthqn3 = models.CharField(max_length=50)
 
 
 class Travel(models.Model):
     travelqn1 = models.CharField(max_length=50)
     travelqn2 = models.CharField(max_length=50)
+    travelqn3 = models.CharField(max_length=50)
     travelqn3 = models.CharField(max_length=50)
 
 

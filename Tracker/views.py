@@ -49,11 +49,21 @@ def filter_country(request):
                 request.session['data'] = data
 
 
+def covid_symptoms(request):
+    symptoms = requests.get('https://www.cdc.gov/coronavirus/2019-ncov/symptoms-testing/symptoms.html').json()
+    c = {
+        'symptoms': symptoms
+    }
+    c.update(csrf(request))
+    return render(request, 'Tracker/symptoms.html', c)
+    
+    
 @csrf_exempt
 def health_history(request):
-    # html form
     data = request.session.get('data')
+    datastr = 'Enter details of your health history here'
     c = {
+        'datastr': datastr,
         'data': data
     }
     c.update(csrf(request))
@@ -61,9 +71,17 @@ def health_history(request):
 
 
 def travel_history(request):
-    # html form
+    travelstr = 'Enter details of your health history here'
     c = {
-
+        'travelstr': travelstr
     }
     c.update(csrf(request))
     return render(request, 'Tracker/travel.html', c)
+
+
+def feedback(request):
+    statement = 'Here is how vulnerable you may be to covid 19 infection'
+    c = {
+        'statement': statement
+    }
+    return render(request, 'Tracker/infectionfeedback.html', c)
