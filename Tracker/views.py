@@ -3,9 +3,9 @@ from Tracker.models import *
 from django.template.context_processors import csrf
 from django.views.decorators.csrf import csrf_exempt
 import json
-import urllib.request
 from bs4 import BeautifulSoup as beauty
 import requests
+from six.moves import urllib
 import pandas as pd
 pd.set_option('display.width', 1000)
 pd.set_option('colheader_justify', 'center')
@@ -51,9 +51,22 @@ def filter_country(request):
 
 
 def covid_symptoms(request):
-    # link1 = "https://www.cdc.gov/coronavirus/2019-ncov/symptoms-testing/symptoms.html"
-    symptoms1 = requests.get("https://covid19-update-api.herokuapp.com/api/v1/articles/symptoms")
-    symptoms = json.loads(symptoms1.json())
+    symptom = requests.get('https://www.who.int/health-topics/coronavirus#tab=tab_3')
+    data = beauty(symptom.content, 'html.parser')
+    symp = data.findAll('div', class_="sf_colsOut tabContent")
+    for i in symp:
+        symptoms = i.text
+        [x.replace('\n', '') for x in symptoms]
+
+    # lines = symptoms.split('.')
+    # for line in lines:
+    #     symptoms1 = line
+    #     print(line)
+    # symptom = urllib.request.Request(link, headers={'User-Agent': 'Mozilla/5.0'})
+    # data = urllib.request.urlopen(symptom).read()
+    # symptom1 = data.decode('ISO-8859-1')
+    # print(symptoms.headers['content-type'])
+
     c = {
         'symptoms': symptoms
     }
