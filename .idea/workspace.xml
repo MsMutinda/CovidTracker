@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="4b61970c-1d08-4395-b07a-3c27f3f70bac" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tracker/static/css/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/Tracker/static/css/home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tracker/templates/Tracker/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/Tracker/templates/Tracker/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tracker/templates/Tracker/symptoms.html" beforeDir="false" afterPath="$PROJECT_DIR$/Tracker/templates/Tracker/symptoms.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tracker/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tracker/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -15,11 +18,15 @@
       <list>
         <option value="Python Script" />
         <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedIndex" value="1" />
   </component>
   <component name="ProjectId" id="1ne92s2Qi0UKQB8WcMB0jLVssd1" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -35,6 +42,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -83,7 +91,9 @@
       <workItem from="1618348207105" duration="686000" />
       <workItem from="1618349283975" duration="137000" />
       <workItem from="1618378743407" duration="279000" />
-      <workItem from="1618482664097" duration="22261000" />
+      <workItem from="1618482664097" duration="22399000" />
+      <workItem from="1618509455695" duration="43000" />
+      <workItem from="1618547271370" duration="12676000" />
     </task>
     <servers />
   </component>

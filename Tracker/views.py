@@ -53,22 +53,26 @@ def filter_country(request):
 def covid_symptoms(request):
     symptom = requests.get('https://www.who.int/health-topics/coronavirus#tab=tab_3')
     data = beauty(symptom.content, 'html.parser')
-    symp = data.findAll('div', class_="sf_colsOut tabContent")
-    for i in symp:
-        symptoms = i.text
-        [x.replace('\n', '') for x in symptoms]
-
+    # symp = data.findAll('div', class_="sf_colsOut tabContent")
+    # for i in symp:
+    #     symptoms = i.text
+    #     [x.replace('\n', '') for x in symptoms]
+    one = data.select('.tabContent li')
     # lines = symptoms.split('.')
     # for line in lines:
     #     symptoms1 = line
     #     print(line)
+
+
+
     # symptom = urllib.request.Request(link, headers={'User-Agent': 'Mozilla/5.0'})
     # data = urllib.request.urlopen(symptom).read()
     # symptom1 = data.decode('ISO-8859-1')
     # print(symptoms.headers['content-type'])
 
     c = {
-        'symptoms': symptoms
+        # 'symptoms': symptoms
+        'one': one
     }
     c.update(csrf(request))
     return render(request, 'Tracker/symptoms.html', c)
