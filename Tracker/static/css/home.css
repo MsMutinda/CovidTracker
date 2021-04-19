@@ -42,5 +42,6 @@ ul, li {
     h3 {
         position: relative;
         top: 30px;
+        text-align: center;
     }
 }

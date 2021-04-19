@@ -4,9 +4,8 @@
     <list default="true" id="4b61970c-1d08-4395-b07a-3c27f3f70bac" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tracker/static/css/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/Tracker/static/css/home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tracker/templates/Tracker/health.html" beforeDir="false" afterPath="$PROJECT_DIR$/Tracker/templates/Tracker/health.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tracker/templates/Tracker/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/Tracker/templates/Tracker/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/templates/Tracker/symptoms.html" beforeDir="false" afterPath="$PROJECT_DIR$/Tracker/templates/Tracker/symptoms.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tracker/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +46,10 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Tracker/static/css" />
+      <recent name="$PROJECT_DIR$/Tracker/static/js" />
+      <recent name="$PROJECT_DIR$/Tracker" />
+      <recent name="$PROJECT_DIR$/Tracker/static" />
       <recent name="$PROJECT_DIR$/Tracker/templates/Tracker" />
     </key>
   </component>
@@ -93,7 +96,11 @@
       <workItem from="1618378743407" duration="279000" />
       <workItem from="1618482664097" duration="22399000" />
       <workItem from="1618509455695" duration="43000" />
-      <workItem from="1618547271370" duration="12676000" />
+      <workItem from="1618547271370" duration="12894000" />
+      <workItem from="1618831412118" duration="122000" />
+      <workItem from="1618833580845" duration="631000" />
+      <workItem from="1618836060332" duration="1252000" />
+      <workItem from="1618861636071" duration="6958000" />
     </task>
     <servers />
   </component>
