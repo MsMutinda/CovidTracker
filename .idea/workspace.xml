@@ -2,18 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b61970c-1d08-4395-b07a-3c27f3f70bac" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runtime.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/covidTracker.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/covidTracker.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/bin/activate" beforeDir="false" afterPath="$PROJECT_DIR$/Tracker/bin/activate" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/bin/activate.csh" beforeDir="false" afterPath="$PROJECT_DIR$/Tracker/bin/activate.csh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/bin/activate.fish" beforeDir="false" afterPath="$PROJECT_DIR$/Tracker/bin/activate.fish" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/bin/activate.ps1" beforeDir="false" afterPath="$PROJECT_DIR$/Tracker/bin/activate.ps1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/bin/pip" beforeDir="false" afterPath="$PROJECT_DIR$/Tracker/bin/pip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/bin/pip3" beforeDir="false" afterPath="$PROJECT_DIR$/Tracker/bin/pip3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/pyvenv.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/Tracker/pyvenv.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/covidTracker/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/covidTracker/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime.txt" beforeDir="false" afterPath="$PROJECT_DIR$/runtime.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +103,7 @@
       <workItem from="1618861636071" duration="7148000" />
       <workItem from="1618869449534" duration="1758000" />
       <workItem from="1618907368489" duration="2229000" />
-      <workItem from="1618912124581" duration="2348000" />
+      <workItem from="1618912124581" duration="5809000" />
     </task>
     <servers />
   </component>
