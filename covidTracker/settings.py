@@ -77,8 +77,8 @@ DATABASES = {
         'NAME': 'covidTracker',
         'USER': 'root',
         'PASSWORD': "",
-        'HOST': "127.0.0.1",
-        'PORT': "",
+        'HOST': "",
+        'PORT': "5432",
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
             }
@@ -137,5 +137,7 @@ STATICFILES_DIRS = (
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 import dj_database_url
-prod_db  =  dj_database_url.config(conn_max_age=500)
+
+prod_db = dj_database_url.config(conn_max_age=500)
+DATABASES['default'] = dj_database_url.config(default='postgres://...')
 DATABASES['default'].update(prod_db)
