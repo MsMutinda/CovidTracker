@@ -2,7 +2,6 @@ ul, li {
     display: inline-flex;
     padding: 5px;
     flex-wrap: wrap;
-    color: mintcream;
 }
  .float-right a:hover {
      color: midnightblue;

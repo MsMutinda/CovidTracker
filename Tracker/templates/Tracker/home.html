@@ -11,18 +11,20 @@
 </head>
 
 <body style="background-color: #f6e1d2;">
-<div>
-    <ul class="float-right list-unstyled font-weight-bold">
-        <li><a style="color: darkslategrey;" href="#">Home</a><li>
-        <li><a style="color: darkslategrey;"href="{% url 'symptoms' %}">Symptoms/Prevention</a><li>
-        <li><a style="color: darkslategrey;"href="{% url 'health_history' %}">Diagnosis</a><li>
-        <li><a style="color: darkslategrey;"href="#">Emergency Contacts</a><li>
-        <li><a style="color: darkslategrey;"href="#">Login or Sign up</a><li>
+<div class="container">
+  <div>
+    <ul class="float-right list-unstyled font-weight-bold pt-4">
+        <li><a style="color: chocolate;" href="#">Home</a><li>
+        <li><a style="color: chocolate;"href="{% url 'symptoms' %}">Symptoms/Prevention</a><li>
+        <li><a style="color: chocolate"href="{% url 'health_history' %}">Diagnosis</a><li>
+        <li><a style="color: chocolate"href="{% url 'feedback' %}">Feedback</a><li>
+        <li><a style="color: chocolate;"href="{% url 'contact' %}">Emergency Contacts</a><li>
     </ul>
-</div>
+        <ul><li> <h3 class="pb-1" style="color: darkslategrey;"><b>Latest covid-19 statistics and exposure predictions </b></h3>
+</li></ul>
 
- <h3 class="pt-4" style="position: relative; left: 50px;"><b>Latest covid-19 statistics and exposure predictions </b></h3> <br>
-    <div class="container-fluid">
+  </div>
+
     <div class="row">
         <div class="col-12 mt-3">
             <div class="card">
