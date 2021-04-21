@@ -3,16 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4b61970c-1d08-4395-b07a-3c27f3f70bac" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/static/css/health.css" beforeDir="false" afterPath="$PROJECT_DIR$/Tracker/static/css/health.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/static/css/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/Tracker/static/css/home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/templates/Tracker/health.html" beforeDir="false" afterPath="$PROJECT_DIR$/Tracker/templates/Tracker/health.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/templates/Tracker/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/Tracker/templates/Tracker/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/templates/Tracker/infectionfeedback.html" beforeDir="false" afterPath="$PROJECT_DIR$/Tracker/templates/Tracker/infectionfeedback.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/templates/Tracker/symptoms.html" beforeDir="false" afterPath="$PROJECT_DIR$/Tracker/templates/Tracker/symptoms.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/templates/Tracker/travel.html" beforeDir="false" afterPath="$PROJECT_DIR$/Tracker/templates/Tracker/travel.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tracker/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tracker/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/covidTracker/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/covidTracker/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +101,7 @@
       <workItem from="1618869449534" duration="1758000" />
       <workItem from="1618907368489" duration="2229000" />
       <workItem from="1618912124581" duration="14076000" />
-      <workItem from="1618983520446" duration="10082000" />
+      <workItem from="1618983520446" duration="10537000" />
     </task>
     <servers />
   </component>
