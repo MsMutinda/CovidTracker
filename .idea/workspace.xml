@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b61970c-1d08-4395-b07a-3c27f3f70bac" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/covidTracker.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/covidTracker.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/covidTracker/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/covidTracker/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,6 +103,7 @@
       <workItem from="1618907368489" duration="2229000" />
       <workItem from="1618912124581" duration="14076000" />
       <workItem from="1618983520446" duration="10537000" />
+      <workItem from="1619083518435" duration="1501000" />
     </task>
     <servers />
   </component>
