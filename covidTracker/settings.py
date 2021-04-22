@@ -14,8 +14,7 @@ SECRET_KEY = '+-d)zolfzxv)w0cv!7*k$@7d6*2=m6s-7g$v21k$o--m^j0e2&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['covidtrackerdjango.herokuapp.com',
-                 '127.0.0.1']
+ALLOWED_HOSTS = ['covidtrackerdjango.herokuapp.com']
 
 
 # Application definition
