@@ -2,7 +2,64 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b61970c-1d08-4395-b07a-3c27f3f70bac" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/covidTracker.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/covidTracker.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tracker/lib/python3.8/site-packages/django/contrib/gis/db/backends/mysql/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tracker/lib/python3.8/site-packages/django/contrib/gis/db/backends/mysql/base.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tracker/lib/python3.8/site-packages/django/contrib/gis/db/backends/mysql/features.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tracker/lib/python3.8/site-packages/django/contrib/gis/db/backends/mysql/introspection.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tracker/lib/python3.8/site-packages/django/contrib/gis/db/backends/mysql/operations.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tracker/lib/python3.8/site-packages/django/contrib/gis/db/backends/mysql/schema.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tracker/lib/python3.8/site-packages/django/db/backends/mysql/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tracker/lib/python3.8/site-packages/django/db/backends/mysql/base.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tracker/lib/python3.8/site-packages/django/db/backends/mysql/client.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tracker/lib/python3.8/site-packages/django/db/backends/mysql/compiler.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tracker/lib/python3.8/site-packages/django/db/backends/mysql/creation.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tracker/lib/python3.8/site-packages/django/db/backends/mysql/features.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tracker/lib/python3.8/site-packages/django/db/backends/mysql/introspection.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tracker/lib/python3.8/site-packages/django/db/backends/mysql/operations.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tracker/lib/python3.8/site-packages/django/db/backends/mysql/schema.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tracker/lib/python3.8/site-packages/django/db/backends/mysql/validation.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/covidTracker/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/covidTracker/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime.txt" beforeDir="false" afterPath="$PROJECT_DIR$/runtime.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.9/site-packages/MySQLdb/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.9/site-packages/MySQLdb/_exceptions.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.9/site-packages/MySQLdb/_mysql.cpython-39-darwin.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.9/site-packages/MySQLdb/connections.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.9/site-packages/MySQLdb/constants/CLIENT.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.9/site-packages/MySQLdb/constants/CR.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.9/site-packages/MySQLdb/constants/ER.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.9/site-packages/MySQLdb/constants/FIELD_TYPE.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.9/site-packages/MySQLdb/constants/FLAG.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.9/site-packages/MySQLdb/constants/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.9/site-packages/MySQLdb/converters.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.9/site-packages/MySQLdb/cursors.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.9/site-packages/MySQLdb/release.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.9/site-packages/MySQLdb/times.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.9/site-packages/django/contrib/gis/db/backends/mysql/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.9/site-packages/django/contrib/gis/db/backends/mysql/base.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.9/site-packages/django/contrib/gis/db/backends/mysql/features.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.9/site-packages/django/contrib/gis/db/backends/mysql/introspection.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.9/site-packages/django/contrib/gis/db/backends/mysql/operations.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.9/site-packages/django/contrib/gis/db/backends/mysql/schema.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.9/site-packages/django/db/backends/mysql/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.9/site-packages/django/db/backends/mysql/base.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.9/site-packages/django/db/backends/mysql/client.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.9/site-packages/django/db/backends/mysql/compiler.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.9/site-packages/django/db/backends/mysql/creation.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.9/site-packages/django/db/backends/mysql/features.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.9/site-packages/django/db/backends/mysql/introspection.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.9/site-packages/django/db/backends/mysql/operations.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.9/site-packages/django/db/backends/mysql/schema.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.9/site-packages/django/db/backends/mysql/validation.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.9/site-packages/mysqlclient-2.0.3.dist-info/INSTALLER" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.9/site-packages/mysqlclient-2.0.3.dist-info/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.9/site-packages/mysqlclient-2.0.3.dist-info/METADATA" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.9/site-packages/mysqlclient-2.0.3.dist-info/RECORD" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.9/site-packages/mysqlclient-2.0.3.dist-info/REQUESTED" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.9/site-packages/mysqlclient-2.0.3.dist-info/WHEEL" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python3.9/site-packages/mysqlclient-2.0.3.dist-info/top_level.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
