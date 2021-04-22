@@ -73,7 +73,7 @@ WSGI_APPLICATION = 'covidTracker.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'covidTracker',
         'USER': 'root',
         'PASSWORD': "",
@@ -140,6 +140,6 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 import dj_database_url
 
 prod_db = dj_database_url.config(conn_max_age=500)
-# DATABASES['default'] = dj_database_url.config(default='postgres://USER:PASSWORD@HOST:PORT/NAME [2]')
+DATABASES['default'] = dj_database_url.config(default='postgres://USER:PASSWORD@HOST:PORT/NAME [2]')
 # DATABASES['default'] = dj_database_url.parse('postgres://USER:PASSWORD@HOST:PORT/NAME [2]', conn_max_age=600)
 DATABASES['default'].update(prod_db)
