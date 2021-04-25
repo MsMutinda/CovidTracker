@@ -7,6 +7,6 @@
 - Javascript
 - Postman Covid-19 API
 
-# You can view project progress via the following link:
+# You can view project progress via:
 covidtrackerdjango.herokuapp.com
 
