@@ -13,8 +13,8 @@ pd.set_option('colheader_justify', 'center')
 
 def stats(request):
     resp = json.dumps(requests.get('https://api.covid19api.com/summary').json(), sort_keys=True, indent=4)
-    request.session['respdata1'] = respdata1
     respdata1 = json.loads(resp)
+    request.session['respdata1'] = respdata1
     for item in respdata1.keys():
         if item == 'Countries':
             respdata = respdata1[item]
