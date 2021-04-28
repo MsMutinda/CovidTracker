@@ -32,6 +32,7 @@
                     <div class="card-body">
                           <h3 class="card-title" style="font-size: 32px;"><strong>Global statistics </strong></h3><br><br>
                                 <div style="font-size: 17px;">
+                                    <p>Plotted: {{figplot}}</p>
                                     <p><b>Date:</b> {{respdata1.Global.Date}}</p>
                                     <p><b>New Confirmed Cases: </b> {{respdata1.Global.NewConfirmed}}</p>
                                     <p><b>New Deaths: </b> {{respdata1.Global.NewDeaths}}</p>
@@ -47,11 +48,11 @@
     </div>
 
     <br><br>
-    <div class="float-right" style="position: relative; right: 90px;">
-        <input class='btn-lg' id="filter-data" name='search_item' type="search" style='border-radius: 6px;' size='15px' placeholder="Filter by country">
-        <button class="btn-lg" type="button" onclick="send_value()" href="{% url 'stats' %}">Search</button>
-    </div>
-            <br><br>
+<!--    <div class="float-right" style="position: relative; right: 90px;">-->
+<!--        <input class='btn-lg' id="filter-data" name='search_item' type="search" style='border-radius: 6px;' size='15px' placeholder="Filter by country">-->
+<!--        <button class="btn-lg" type="button" onclick="send_value()" href="{% url 'stats' %}">Search</button>-->
+<!--    </div>-->
+<!--            <br><br>-->
         <h1 style="font-size: 32px;"><strong>Data per country </strong></h1><br>
         <section>
                 {{df_obj|safe}}

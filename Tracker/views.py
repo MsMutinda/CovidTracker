@@ -26,19 +26,6 @@ def stats(request):
             df_obj = df.to_html(classes='mystyle', index=False)
             request.session['df_obj'] = df_obj
 
-    c = {
-        # 'resp_data': GetDataModel.objects.all(),
-        'respdata1': respdata1,
-        'df_obj': df_obj
-        }
-    c.update(csrf(request))
-    return render(request, 'Tracker/home.html', c)
-
-
-def visualize_global(request):
-    # convert to pandas df
-    # respdata1 = request.session.get('respdata1')
-    # respdata1_df = pd.to_DataFrame()
     plotsdata = {
         'Date': respdata1.Global.Date,
         'New Confirmed Cases': respdata1.Global.NewConfirmed,
@@ -48,28 +35,65 @@ def visualize_global(request):
         'Total Deaths': respdata1.Global.TotalDeaths,
         'Total Recovered': respdata1.Global.TotalRecovered
     }
-    xlabel = []
-    ylabel=[]
+    xlabel = [], ylabel = []
     for key in plotsdata.keys():
         xlabel.append(key)
         ylabel.append(plotsdata[key])
         print(xlabel)
         print(ylabel)
-
-    dataplot = [{
-        'type': 'bar',
-        'x': xlabel,
-        'y': ylabel
-    }]
-    plotlayout = {
-    'title': 'Global Statistics',
-    'xaxis': {'title': 'Case categories'},
-    'yaxis': {'title': 'Number of cases'}
+    dataplot = [{'type': 'bar', 'x': xlabel, 'y': ylabel}]
+    plotlayout = {'title': 'Global Statistics', 'xaxis': {'title': 'Case categories'}, 'yaxis': {'title': 'Number of cases'}}
+    fig = {'data': dataplot, 'layout': plotlayout}
+    figplot = offline.plot(fig)
+    c = {
+        # 'resp_data': GetDataModel.objects.all(),
+        'respdata1': respdata1,
+        'df_obj': df_obj,
+        'figplot': figplot
     }
-    fig = {'data': dataplot,
-           'layout': plotlayout
-           }
-    offline.plot(fig, filename='statsvisual.html')
+    c.update(csrf(request))
+    return render(request, 'Tracker/home.html', c)
+
+
+# def visualize_global(request):
+    # convert to pandas df
+    # respdata1 = request.session.get('respdata1')
+    # respdata1_df = pd.to_DataFrame()
+    # plotsdata = {
+    #     'Date': respdata1.Global.Date,
+    #     'New Confirmed Cases': respdata1.Global.NewConfirmed,
+    #     'New Deaths': respdata1.Global.NewDeaths,
+    #     'New Recoveries': respdata1.Global.NewRecovered,
+    #     'Total Confirmed': respdata1.Global.TotalConfirmed,
+    #     'Total Deaths': respdata1.Global.TotalDeaths,
+    #     'Total Recovered': respdata1.Global.TotalRecovered
+    # }
+    # xlabel = []
+    # ylabel=[]
+    # for key in plotsdata.keys():
+    #     xlabel.append(key)
+    #     ylabel.append(plotsdata[key])
+    #     print(xlabel)
+    #     print(ylabel)
+    #
+    # dataplot = [{
+    #     'type': 'bar',
+    #     'x': xlabel,
+    #     'y': ylabel
+    # }]
+    # plotlayout = {
+    # 'title': 'Global Statistics',
+    # 'xaxis': {'title': 'Case categories'},
+    # 'yaxis': {'title': 'Number of cases'}
+    # }
+    # fig = {'data': dataplot,
+    #        'layout': plotlayout
+    #        }
+    # figplot = offline.plot(fig)
+    # context = {
+    #     'plot': figplot
+    # }
+    # return render(request, 'Tracker/home.html', context)
 
 
 @csrf_exempt
