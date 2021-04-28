@@ -36,7 +36,7 @@ def stats(request):
     plotlayout = {'title': 'Global Statistics', 'xaxis': {'title': 'Case categories'},
                   'yaxis': {'title': 'Number of cases'}}
     fig = {'data': dataplot, 'layout': plotlayout}
-    figplot = offline.plot(fig, filename='globstats.html')
+    figplot = offline.plot(fig)
     graph = figplot.to_html(full_html=False, default_height=500, default_width=400)
     # test = render_to_string('globstats.html')
 
