@@ -25,8 +25,9 @@ def stats(request):
         'Total Deaths': respdata1['Global']['TotalDeaths'],
         'Total Recovered': respdata1['Global']['TotalRecovered']
     }
-    xlabel = [], ylabel = []
-    for key in plotsdata.keys():
+    xlabel = []
+    ylabel = []
+    for key in plotsdata:
         xlabel.append(key)
         ylabel.append(plotsdata[key])
         print(xlabel)
