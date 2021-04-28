@@ -18,7 +18,7 @@ def stats(request):
     respdata1 = json.loads(resp)
     plotsdata = {
         'Date': respdata1.Global.Date,
-        'New Confirmed Cases': respdata1.Global.NewConfirmed,
+        'New Confirmed Cases': respdata1['Global'].NewConfirmed,
         'New Deaths': respdata1.Global.NewDeaths,
         'New Recoveries': respdata1.Global.NewRecovered,
         'Total Confirmed': respdata1.Global.TotalConfirmed,
