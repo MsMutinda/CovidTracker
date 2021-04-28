@@ -25,18 +25,16 @@
 
   </div>
 
-    <div class="row">
-        <div class="col-12 mt-3">
-            <div class="card">
-                <div class="card-horizontal">
-                    <div class="card-body">
-                          <h3 class="card-title" style="font-size: 32px;"><strong>Global statistics </strong></h3><br><br>
-                                <div style="font-size: 17px;">
-
-                                     {% autoescape off %}
-                                        {{ plot_div }}
-                                     {% endautoescape %}
-
+    {% autoescape off %}
+        {{ plot_div }}
+    {% endautoescape %}
+<!--    <div class="row">-->
+<!--        <div class="col-12 mt-3">-->
+<!--            <div class="card">-->
+<!--                <div class="card-horizontal">-->
+<!--                    <div class="card-body">-->
+<!--                          <h3 class="card-title" style="font-size: 32px;"><strong>Global statistics </strong></h3><br><br>-->
+<!--                                <div style="font-size: 17px;">-->
 <!--                                    <p><b>Date:</b> {{respdata1.Global.Date}}</p>-->
 <!--                                    <p><b>New Confirmed Cases: </b> {{respdata1.Global.NewConfirmed}}</p>-->
 <!--                                    <p><b>New Deaths: </b> {{respdata1.Global.NewDeaths}}</p>-->
@@ -44,12 +42,12 @@
 <!--                                    <p><b>Total Confirmed:</b> {{respdata1.Global.TotalConfirmed}}</p>-->
 <!--                                    <p><b>Total Deaths: </b>{{respdata1.Global.TotalDeaths}}</p>-->
 <!--                                    <p><b>Total Recovered:</b> {{respdata1.Global.TotalRecovered}}</p>-->
-                                </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<!--                                </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
 
     <br><br>
 <!--    <div class="float-right" style="position: relative; right: 90px;">-->
