@@ -7,8 +7,8 @@ from bs4 import BeautifulSoup as beauty
 import requests
 from six.moves import urllib
 import pandas as pd
-# from plotly.graph_objs import Bar
-import plotly.graph_objs as go
+from plotly.graph_objs import Bar
+from plotly.graph_objs import Scatter
 from plotly.offline import plot
 from django.template.loader import render_to_string
 pd.set_option('display.width', 1000)
