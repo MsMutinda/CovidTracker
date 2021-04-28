@@ -7,6 +7,8 @@ from bs4 import BeautifulSoup as beauty
 import requests
 from six.moves import urllib
 import pandas as pd
+from plotly.graph_objs import Bar
+from plotly import offline
 pd.set_option('display.width', 1000)
 pd.set_option('colheader_justify', 'center')
 
@@ -35,10 +37,39 @@ def stats(request):
 
 def visualize_global(request):
     # convert to pandas df
-    respdata1 = request.session.get('respdata1')
-    respdata1_df = pd.to_DataFrame()
+    # respdata1 = request.session.get('respdata1')
+    # respdata1_df = pd.to_DataFrame()
+    plotsdata = {
+        'Date': respdata1.Global.Date,
+        'New Confirmed Cases': respdata1.Global.NewConfirmed,
+        'New Deaths': respdata1.Global.NewDeaths,
+        'New Recoveries': respdata1.Global.NewRecovered,
+        'Total Confirmed': respdata1.Global.TotalConfirmed,
+        'Total Deaths': respdata1.Global.TotalDeaths,
+        'Total Recovered': respdata1.Global.TotalRecovered
+    }
+    xlabel = []
+    ylabel=[]
+    for key in plotsdata.keys():
+        xlabel.append(key)
+        ylabel.append(plotsdata[key])
+        print(xlabel)
+        print(ylabel)
 
-    print("This is global map showing world infection rates")
+    dataplot = [{
+        'type': 'bar',
+        'x': xlabel,
+        'y': ylabel
+    }]
+    plotlayout = {
+    'title': 'Global Statistics',
+    'xaxis': {'title': 'Case categories'},
+    'yaxis': {'title': 'Number of cases'}
+    }
+    fig = {'data': dataplot,
+           'layout': plotlayout
+           }
+    offline.plot(fig, filename='statsvisual.html')
 
 
 @csrf_exempt
