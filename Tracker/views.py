@@ -35,7 +35,7 @@ def stats(request):
     plotlayout = {'title': 'Global Statistics', 'xaxis': {'title': 'Case categories'},
                   'yaxis': {'title': 'Number of cases'}}
     fig = {'data': dataplot, 'layout': plotlayout}
-    figplot = offline.plot(fig, 'globstats.html', auto_open=True)
+    figplot = offline.plot(fig, filename='globstats.html', auto_open=True)
 
     # Data per country
     for item in respdata1.keys():
