@@ -16,6 +16,7 @@ pd.set_option('colheader_justify', 'center')
 def stats(request):
     resp = json.dumps(requests.get('https://api.covid19api.com/summary').json(), sort_keys=True, indent=4)
     respdata1 = json.loads(resp)
+    # Global stats visualization
     plotsdata = {
         'Date': respdata1['Global']['Date'],
         'New Confirmed Cases': respdata1['Global']['NewConfirmed'],
@@ -25,20 +26,18 @@ def stats(request):
         'Total Deaths': respdata1['Global']['TotalDeaths'],
         'Total Recovered': respdata1['Global']['TotalRecovered']
     }
-    xlabel = []
-    ylabel = []
+    xdata = []
+    ydata = []
     for key in plotsdata:
-        xlabel.append(key)
-        ylabel.append(plotsdata[key])
-        print(xlabel)
-        print(ylabel)
-    dataplot = [{'type': 'bar', 'x': xlabel, 'y': ylabel}]
+        xdata.append(key)
+        ydata.append(plotsdata[key])
+    dataplot = [{'type': 'bar', 'x': xdata, 'y': ydata}]
     plotlayout = {'title': 'Global Statistics', 'xaxis': {'title': 'Case categories'},
                   'yaxis': {'title': 'Number of cases'}}
     fig = {'data': dataplot, 'layout': plotlayout}
     figplot = offline.plot(fig, 'globstats.html', auto_open=True)
 
-    request.session['respdata1'] = respdata1
+    # Data per country
     for item in respdata1.keys():
         if item == 'Countries':
             respdata = respdata1[item]
