@@ -17,7 +17,7 @@ def stats(request):
     resp = json.dumps(requests.get('https://api.covid19api.com/summary').json(), sort_keys=True, indent=4)
     respdata1 = json.loads(resp)
     plotsdata = {
-        'Date': respdata1.Global.Date,
+        'Date': respdata1['Global'].Date,
         'New Confirmed Cases': respdata1['Global'].NewConfirmed,
         'New Deaths': respdata1.Global.NewDeaths,
         'New Recoveries': respdata1.Global.NewRecovered,
