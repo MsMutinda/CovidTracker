@@ -39,7 +39,7 @@ def stats(request):
     plot_div = plot([Scatter(x=xdata, y=ydata,
                         mode='lines', name='test',
                         opacity=0.8, marker_color='green')],
-               output_type='div', show_link=False, link_text="", width=500, height=500)
+               output_type='div', show_link=False, link_text="")
 
     # dataplot = [{'type': 'bar', 'x': xdata, 'y': ydata}]
     # plotlayout = {'title': 'Global Statistics', 'xaxis': {'title': 'Case categories'},
