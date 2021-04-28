@@ -19,11 +19,11 @@ def stats(request):
     plotsdata = {
         'Date': respdata1['Global']['Date'],
         'New Confirmed Cases': respdata1['Global']['NewConfirmed'],
-        'New Deaths': respdata1.Global.NewDeaths,
-        'New Recoveries': respdata1.Global.NewRecovered,
-        'Total Confirmed': respdata1.Global.TotalConfirmed,
-        'Total Deaths': respdata1.Global.TotalDeaths,
-        'Total Recovered': respdata1.Global.TotalRecovered
+        'New Deaths': respdata1['Global']['NewDeaths'],
+        'New Recoveries': respdata1['Global']['NewRecovered'],
+        'Total Confirmed': respdata1['Global']['TotalConfirmed'],
+        'Total Deaths': respdata1['Global']['TotalDeaths'],
+        'Total Recovered': respdata1['Global']['TotalRecovered']
     }
     xlabel = [], ylabel = []
     for key in plotsdata.keys():
