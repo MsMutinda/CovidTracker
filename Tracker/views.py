@@ -36,7 +36,8 @@ def stats(request):
     plotlayout = {'title': 'Global Statistics', 'xaxis': {'title': 'Case categories'},
                   'yaxis': {'title': 'Number of cases'}}
     fig = {'data': dataplot, 'layout': plotlayout}
-    figplot = offline.plot(fig, filename='globstats.html')
+    figplot = offline.plot(fig, filename='/Tracker/globstats.html')
+
     request.session['respdata1'] = respdata1
     for item in respdata1.keys():
         if item == 'Countries':
@@ -54,47 +55,6 @@ def stats(request):
     }
     c.update(csrf(request))
     return render(request, 'Tracker/home.html', c)
-
-
-# def visualize_global(request):
-    # convert to pandas df
-    # respdata1 = request.session.get('respdata1')
-    # respdata1_df = pd.to_DataFrame()
-    # plotsdata = {
-    #     'Date': respdata1.Global.Date,
-    #     'New Confirmed Cases': respdata1.Global.NewConfirmed,
-    #     'New Deaths': respdata1.Global.NewDeaths,
-    #     'New Recoveries': respdata1.Global.NewRecovered,
-    #     'Total Confirmed': respdata1.Global.TotalConfirmed,
-    #     'Total Deaths': respdata1.Global.TotalDeaths,
-    #     'Total Recovered': respdata1.Global.TotalRecovered
-    # }
-    # xlabel = []
-    # ylabel=[]
-    # for key in plotsdata.keys():
-    #     xlabel.append(key)
-    #     ylabel.append(plotsdata[key])
-    #     print(xlabel)
-    #     print(ylabel)
-    #
-    # dataplot = [{
-    #     'type': 'bar',
-    #     'x': xlabel,
-    #     'y': ylabel
-    # }]
-    # plotlayout = {
-    # 'title': 'Global Statistics',
-    # 'xaxis': {'title': 'Case categories'},
-    # 'yaxis': {'title': 'Number of cases'}
-    # }
-    # fig = {'data': dataplot,
-    #        'layout': plotlayout
-    #        }
-    # figplot = offline.plot(fig)
-    # context = {
-    #     'plot': figplot
-    # }
-    # return render(request, 'Tracker/home.html', context)
 
 
 @csrf_exempt
