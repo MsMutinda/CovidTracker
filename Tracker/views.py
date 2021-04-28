@@ -36,7 +36,7 @@ def stats(request):
     plotlayout = {'title': 'Global Statistics', 'xaxis': {'title': 'Case categories'},
                   'yaxis': {'title': 'Number of cases'}}
     fig = {'data': dataplot, 'layout': plotlayout}
-    figplot = offline.plot(fig, filename='/Tracker/globstats.html')
+    figplot = offline.write_html(fig, 'home/msmutinda/PycharmProjects/covidTracker/Tracker/globstats.html')
 
     request.session['respdata1'] = respdata1
     for item in respdata1.keys():
