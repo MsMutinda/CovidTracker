@@ -7,8 +7,9 @@ from bs4 import BeautifulSoup as beauty
 import requests
 from six.moves import urllib
 import pandas as pd
-from plotly.graph_objs import Bar
-from plotly import offline
+# from plotly.graph_objs import Bar
+import plotly.graph_objs as go
+from plotly.offline import plot
 from django.template.loader import render_to_string
 pd.set_option('display.width', 1000)
 pd.set_option('colheader_justify', 'center')
@@ -32,11 +33,19 @@ def stats(request):
     for key in plotsdata:
         xdata.append(key)
         ydata.append(plotsdata[key])
-    dataplot = [{'type': 'bar', 'x': xdata, 'y': ydata}]
-    plotlayout = {'title': 'Global Statistics', 'xaxis': {'title': 'Case categories'},
-                  'yaxis': {'title': 'Number of cases'}}
-    fig = {'data': dataplot, 'layout': plotlayout}
-    figplot = offline.iplot(fig, filename='globstats.html')
+    # figu = go.Figure()
+    # scatter = go.scatter(xdata, ydata, mode='lines', name='')
+
+    plot_div = plot([Scatter(x=xdata, y=ydata,
+                        mode='lines', name='test',
+                        opacity=0.8, marker_color='green')],
+               output_type='div')
+
+    # dataplot = [{'type': 'bar', 'x': xdata, 'y': ydata}]
+    # plotlayout = {'title': 'Global Statistics', 'xaxis': {'title': 'Case categories'},
+    #               'yaxis': {'title': 'Number of cases'}}
+    # fig = {'data': dataplot, 'layout': plotlayout}
+    # figplot = offline.iplot(fig, filename='globstats.html')
 
     # Data per country
     for item in respdata1.keys():
@@ -51,7 +60,8 @@ def stats(request):
         # 'resp_data': GetDataModel.objects.all(),
         'respdata1': respdata1,
         'df_obj': df_obj,
-        'figplot': figplot
+        # 'figplot': figplot
+        'plot_div': plot_div
     }
     c.update(csrf(request))
     return render(request, 'Tracker/home.html', c)

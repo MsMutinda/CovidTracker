@@ -32,13 +32,9 @@
                     <div class="card-body">
                           <h3 class="card-title" style="font-size: 32px;"><strong>Global statistics </strong></h3><br><br>
                                 <div style="font-size: 17px;">
-<!--                                    <p><b>Plotted: </b> {{figplot}}</p>-->
-
-
-                                    <p><b>Plotted: </b> {{figplot}}</p>
-                                    {% if graph %}
-                                        {{ graph|safe }}
-                                    {% endif %}
+                                 <p><b>Plotted: </b> {% autoescape off %}
+  {{ plot_div }}
+  {% endautoescape %} </p>
 
                                     <p><b>Date:</b> {{respdata1.Global.Date}}</p>
                                     <p><b>New Confirmed Cases: </b> {{respdata1.Global.NewConfirmed}}</p>
