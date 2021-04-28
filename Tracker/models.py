@@ -17,9 +17,9 @@ class DataMap(models.Model):
 
 
 # options to filter display to be country-based
-class DataFilter(models.Model):
-    view = stats
-    print('Filter based on location')
+# class DataFilter(models.Model):
+#     view = stats
+#     print('Filter based on location')
     # filtered = models.CharField(max_length=20, help_text='Filter data', choices=stats.df_obj, default='Filter results')
 
 

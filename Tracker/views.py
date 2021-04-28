@@ -16,16 +16,6 @@ pd.set_option('colheader_justify', 'center')
 def stats(request):
     resp = json.dumps(requests.get('https://api.covid19api.com/summary').json(), sort_keys=True, indent=4)
     respdata1 = json.loads(resp)
-    request.session['respdata1'] = respdata1
-    for item in respdata1.keys():
-        if item == 'Countries':
-            respdata = respdata1[item]
-    # print(*respdata, sep='\n')
-            df_old = pd.DataFrame(respdata)
-            df = df_old.drop(columns=["Premium", "Slug", "ID"])
-            df_obj = df.to_html(classes='mystyle', index=False)
-            request.session['df_obj'] = df_obj
-
     plotsdata = {
         'Date': respdata1.Global.Date,
         'New Confirmed Cases': respdata1.Global.NewConfirmed,
@@ -42,9 +32,19 @@ def stats(request):
         print(xlabel)
         print(ylabel)
     dataplot = [{'type': 'bar', 'x': xlabel, 'y': ylabel}]
-    plotlayout = {'title': 'Global Statistics', 'xaxis': {'title': 'Case categories'}, 'yaxis': {'title': 'Number of cases'}}
+    plotlayout = {'title': 'Global Statistics', 'xaxis': {'title': 'Case categories'},
+                  'yaxis': {'title': 'Number of cases'}}
     fig = {'data': dataplot, 'layout': plotlayout}
     figplot = offline.plot(fig)
+    request.session['respdata1'] = respdata1
+    for item in respdata1.keys():
+        if item == 'Countries':
+            respdata = respdata1[item]
+    # print(*respdata, sep='\n')
+            df_old = pd.DataFrame(respdata)
+            df = df_old.drop(columns=["Premium", "Slug", "ID"])
+            df_obj = df.to_html(classes='mystyle', index=False)
+            request.session['df_obj'] = df_obj
     c = {
         # 'resp_data': GetDataModel.objects.all(),
         'respdata1': respdata1,
@@ -98,7 +98,7 @@ def stats(request):
 
 @csrf_exempt
 def filter_country(request):
-    model = DataFilter
+    # model = DataFilter
     template = '/home.html'
     df_obj = request.session.get('df_obj')
     bs = beauty(open(df_obj))  # parse the data as a string
