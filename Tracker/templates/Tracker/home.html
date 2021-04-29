@@ -20,9 +20,8 @@
         <li><a style="color: chocolate"href="{% url 'feedback' %}">Feedback</a><li>
         <li><a style="color: chocolate;"href="{% url 'contact' %}">Emergency Contacts</a><li>
     </ul>
-        <ul><li> <h3 class="pb-1" style="color: darkslategrey;"><b>Latest covid-19 statistics and exposure predictions </b></h3>
+        <ul><li> <h3 class="pb-1" style="color: darkslategrey;"><b>Latest covid-19 statistics and exposure predictions as at {{respdata1.Global.Date}}</b></h3>
 </li></ul>
-
   </div>
 
     {% autoescape off %}
