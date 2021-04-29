@@ -31,15 +31,12 @@ def stats(request):
     for key in plotsdata:
         xdata.append(key)
         ydata.append(plotsdata[key])
-    # plot_div = plot([Bar(x=xdata, y=ydata, base='overlay', color='species')], output_type='div', show_link=False, link_text="")
+    plot_div = plot([Bar(x=xdata, y=ydata, color='species')], output_type='div', show_link=False, link_text="")
     # plot_div.update_xaxes(rangemode="tozero")
     # dataplot = [{'type': 'bar', 'x': xdata, 'y': ydata}]
     # plotlayout = {'title': 'Global Statistics', 'xaxis': {'title': 'Case categories'},
     #               'yaxis': {'title': 'Number of cases'}}
     # fig = {'data': dataplot, 'layout': plotlayout}
-    data = [Bar(x=xdata, y=ydata)]
-    layout = Layout(barmode='overlay')
-    fig = plot(Figure(data=data, layout=layout))
 
 
     # Data per country
@@ -56,8 +53,7 @@ def stats(request):
         'respdata1': respdata1,
         'df_obj': df_obj,
         # 'figplot': figplot
-        # 'plot_div': plot_div
-        'fig': fig
+        'plot_div': plot_div
     }
     c.update(csrf(request))
     return render(request, 'Tracker/home.html', c)
