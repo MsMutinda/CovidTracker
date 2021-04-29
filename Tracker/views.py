@@ -31,7 +31,7 @@ def stats(request):
     for key in plotsdata:
         xdata.append(key)
         ydata.append(plotsdata[key])
-    plot_div = plot([Bar(x=xdata, y=ydata, color='species')], output_type='div', show_link=False, link_text="")
+    plot_div = plot([Bar(x=xdata, y=ydata)], output_type='div', show_link=False, link_text="")
     # plot_div.update_xaxes(rangemode="tozero")
     # dataplot = [{'type': 'bar', 'x': xdata, 'y': ydata}]
     # plotlayout = {'title': 'Global Statistics', 'xaxis': {'title': 'Case categories'},
