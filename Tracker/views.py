@@ -33,7 +33,7 @@ def stats(request):
         xdata.append(key)
         ydata.append(plotsdata[key])
     layout = Layout(barmode='group', title='Global Statistics')
-    plot_div = plot([Bar(x=xdata, y=ydata, marker_color='orange')], layout=layout, output_type='div', show_link=False, link_text="")
+    plot_div = plot([Bar(x=xdata, y=ydata, layout=layout, marker_color='orange')], output_type='div', show_link=False, link_text="")
     # plot_div.update_xaxes(rangemode="tozero")
     # dataplot = [{'type': 'bar', 'x': xdata, 'y': ydata}]
     # plotlayout = {'title': 'Global Statistics', 'xaxis': {'title': 'Case categories'},
