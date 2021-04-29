@@ -35,11 +35,8 @@ def stats(request):
     # figu = go.Figure()
     # scatter = go.scatter(xdata, ydata, mode='lines', name='')
 
-    plot_div = plot([Scatter(x=xdata, y=ydata,
-                        mode='lines', name='test',
-                        opacity=0.8, marker_color='green')],
-               output_type='div', show_link=False, link_text="")
-
+    plot_div = plot([Scatter(x=xdata, y=ydata, name='test', opacity=0.8, marker_color='green')], output_type='div', show_link=False, link_text="")
+    # plot_div.update_xaxes(rangemode="tozero")
     # dataplot = [{'type': 'bar', 'x': xdata, 'y': ydata}]
     # plotlayout = {'title': 'Global Statistics', 'xaxis': {'title': 'Case categories'},
     #               'yaxis': {'title': 'Number of cases'}}
