@@ -8,7 +8,7 @@ import requests
 from six.moves import urllib
 import pandas as pd
 from plotly.graph_objs import Bar, Layout, Figure, Scatter
-import plotly.express as px
+# import plotly.express as px
 from plotly.offline import plot
 from django.template.loader import render_to_string
 pd.set_option('display.width', 1000)
@@ -32,7 +32,8 @@ def stats(request):
     for key in plotsdata:
         xdata.append(key)
         ydata.append(plotsdata[key])
-    plot_div = plot([Bar(x=xdata, y=ydata, marker_color='green')], output_type='div', show_link=False, link_text="")
+    layout = Layout(barmode='overlay', title='Global Statistics', xaxis='Case categories', yaxis='Number of cases')
+    plot_div = plot([Figure(x=xdata, y=ydata, marker_color='orange')], layout=layout, output_type='div', show_link=False, link_text="")
     # plot_div.update_xaxes(rangemode="tozero")
     # dataplot = [{'type': 'bar', 'x': xdata, 'y': ydata}]
     # plotlayout = {'title': 'Global Statistics', 'xaxis': {'title': 'Case categories'},
