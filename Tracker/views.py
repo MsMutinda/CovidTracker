@@ -33,7 +33,7 @@ def stats(request):
         xdata.append(key)
         ydata.append(plotsdata[key])
     # plot_div = plot([Bar(x=xdata, y=ydata, marker_color='green')], output_type='div', show_link=False, link_text="")
-    plot_div = px.scatter(df, x=xdata, y=ydata, color="species", size='petal_length', hover_data=['petal_width'])
+    plot_div = px.scatter(x=xdata, y=ydata, color="species", size='petal_length')
     # plot_div.update_xaxes(rangemode="tozero")
     # dataplot = [{'type': 'bar', 'x': xdata, 'y': ydata}]
     # plotlayout = {'title': 'Global Statistics', 'xaxis': {'title': 'Case categories'},
