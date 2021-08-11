@@ -136,7 +136,6 @@ def feedback(request):
 
 
 def contact(request):
-    contact_info = 'A list of free hotlines and toll numbers you can call whenever in any covid-19 related emergency'
     c = {
         'contact_info': contact_info
     }

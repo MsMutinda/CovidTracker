@@ -2,21 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b61970c-1d08-4395-b07a-3c27f3f70bac" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/covidTracker.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/covidTracker.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/static/css/df_style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/static/css/health.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/static/css/home.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/static/css/symps.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/templates/Tracker/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/Tracker/templates/Tracker/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/templates/Tracker/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/Tracker/templates/Tracker/contact.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/templates/Tracker/health.html" beforeDir="false" afterPath="$PROJECT_DIR$/Tracker/templates/Tracker/health.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/templates/Tracker/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/Tracker/templates/Tracker/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/templates/Tracker/infectionfeedback.html" beforeDir="false" afterPath="$PROJECT_DIR$/Tracker/templates/Tracker/infectionfeedback.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/templates/Tracker/symptoms.html" beforeDir="false" afterPath="$PROJECT_DIR$/Tracker/templates/Tracker/symptoms.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/templates/Tracker/travel.html" beforeDir="false" afterPath="$PROJECT_DIR$/Tracker/templates/Tracker/travel.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tracker/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tracker/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tracker/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/covidTracker/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/covidTracker/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
@@ -138,7 +124,7 @@
       <workItem from="1619691882702" duration="7708000" />
       <workItem from="1620068254514" duration="159000" />
       <workItem from="1628604698654" duration="10779000" />
-      <workItem from="1628671514065" duration="6505000" />
+      <workItem from="1628671514065" duration="9205000" />
     </task>
     <servers />
   </component>
