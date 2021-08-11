@@ -1,4 +1,4 @@
-#!/home/msmutinda/PycharmProjects/covidTracker/Tracker/bin/python
+#!/home/msmutinda/CovidTracker/Tracker/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
