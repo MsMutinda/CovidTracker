@@ -9,5 +9,5 @@ urlpatterns = [
     path('health/', views.health_history, name='health_history'),
     path('travel/', views.travel_history, name='travel_history'),
     path('feedback/', views.feedback, name='feedback'),
-    path('health-contacts/', views.contact, name='contact')
+    path('contacts/', views.contact, name='contact')
 ]

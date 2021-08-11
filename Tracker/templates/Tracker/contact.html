@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Emergency Contacts</title>
-</head>
-<body>
+{% extends 'Tracker/base.html' %}
 
-<h4>{{contact_info}}</h4>
-</body>
-</html>
+{% block content %}
+
+<section>
+    <p class="pt-4 font-weight-bold mt-3">{{contact_info}}</p>
+</section>
+
+{% endblock %}

@@ -1,45 +1,64 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Covid Symptoms</title>
-    {% load static %}
-    <link href="{% static 'css/symps.css' %}" rel="stylesheet">
-</head>
-<body>
-<h2> Covid-19 symptoms </h2>
-<!--{{symptoms}}-->
-<p>COVID-19 affects different people in different ways.
-        Most infected people will develop mild to moderate illness and recover without hospitalization.</p>
-<p><b>Most common symptoms:</b></p> <ul> <li>fever.</li> <li>dry cough.</li> <li>tiredness.
-    <li>fever.</li></ul>
-<p><b>Less common symptoms:</b></p>
-    <ul>
-        <li>aches and pains.</li> <li>sore throat.</li> <li>diarrhoea.</li> <li>conjunctivitis.</li> <li>headache.</li>
-    <li>loss of taste or smell.</li> <li>a rash on skin, or discolouration of fingers or toes.</li> </ul>
+{% extends 'Tracker/base.html' %}
 
-<p><b>Serious symptoms:</b></p>
-<ul> <li>difficulty breathing or shortness of breath.</li>
-        <li>chest pain or pressure.</li> <li>loss of speech or movement.</li> </ul>
-<br>
+{% block content %}
 
-<h2> Prevention/Safety measures</h2>
-<!--{{one}}-->
-<li><strong><a style="color:saddlebrown"  href="/emergencies/diseases/novel-coronavirus-2019/advice-for-public">
-    Protect yourself: advice for the public</a> </strong></li>
-<li><strong>
-    <a style="color:saddlebrown" href="https://www.who.int/news-room/q-a-detail/coronavirus-disease-covid-19">
-        Myth busters</a></strong></li>
-<li>Wash your hands regularly with soap and water, or clean them with alcohol-based hand rub. </li>
-<li>Maintain at least 1 metre distance between you and people coughing or sneezing. </li>
-<li>Avoid touching your face. </li> <li>Cover your mouth and nose when coughing or sneezing. </li>
-<li>Stay home if you feel unwell. </li> <li>Refrain from smoking and other activities that weaken the lungs. </li>
-<li>Practice physical distancing by avoiding unnecessary travel and staying away from large groups of people.</li>
-<br><br>
-    <p style="font-size: larger"><b>NB: <br></b>Seek immediate medical attention if you have serious symptoms.  Always call before visiting
-        your doctor or health facility. People with mild symptoms who are otherwise healthy should
-            manage their symptoms at home. <br>On average it takes 5–6 days from when someone
-            is infected with the virus for symptoms to show, however it can take up to 14 days. </p>
+<section class="container">
+    <h3 class="card-header"> Covid-19 symptoms </h3>
+    <!--{{symptoms}}--><br>
+    <div class="card-body">
+        <p>COVID-19 affects different people in different ways.
+            Most infected people will develop mild to moderate illness and recover without hospitalization.</p>
 
-</body>
-</html>
+        <p><b>Most common symptoms:</b></p>
+        <ul>
+            <li>fever.</li>
+            <li>dry cough.</li>
+            <li>tiredness.</li>
+            <li>fever.</li>
+        </ul>
+
+        <p><b>Less common symptoms:</b></p>
+        <ul>
+            <li>aches and pains.</li>
+            <li>sore throat.</li>
+            <li>diarrhoea.</li>
+            <li>conjunctivitis.</li>
+            <li>headache.</li>
+            <li>loss of taste or smell.</li>
+            <li>a rash on skin, or discolouration of fingers or toes.</li>
+        </ul>
+
+        <p><b>Serious symptoms:</b></p>
+        <ul>
+            <li>difficulty breathing or shortness of breath.</li>
+            <li>chest pain or pressure.</li> <li>loss of speech or movement.</li>
+        </ul>
+    </div>
+
+
+    <h3 class="card-header"> Prevention/Safety measures</h3><br><br>
+    <!--{{one}}-->
+    <div class="card-body">
+        <ul>
+            <li><strong><a style="color:saddlebrown"  href="/emergencies/diseases/novel-coronavirus-2019/advice-for-public">
+                Protect yourself: advice for the public</a> </strong></li>
+            <li><strong>
+                <a style="color:saddlebrown" href="https://www.who.int/news-room/q-a-detail/coronavirus-disease-covid-19">
+                    Myth busters</a></strong></li>
+            <li>Wash your hands regularly with soap and water, or clean them with alcohol-based hand rub. </li>
+            <li>Maintain at least 1 metre distance between you and people coughing or sneezing. </li>
+            <li>Avoid touching your face. </li> <li>Cover your mouth and nose when coughing or sneezing. </li>
+            <li>Stay home if you feel unwell. </li> <li>Refrain from smoking and other activities that weaken the lungs. </li>
+            <li>Practice physical distancing by avoiding unnecessary travel and staying away from large groups of people.</li>
+        </ul>
+    </div>
+</section>
+
+    <h5 style="color: darkslategrey; font-size: small; font-family: cursive;" class="font-weight-bold pt-5">
+        <b>NB: <br></b>Seek immediate medical attention if you have serious symptoms.  Always call before visiting
+            your doctor or health facility. People with mild symptoms who are otherwise healthy should
+                manage their symptoms at home. <br>On average it takes 5–6 days from when someone
+                is infected with the virus for symptoms to show, however it can take up to 14 days.
+        </h5>
+
+{% endblock %}

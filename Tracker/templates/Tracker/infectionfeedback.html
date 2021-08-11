@@ -1,16 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Infection probability</title>
-</head>
-<body>
-    <div class="container">
-      <div class="col-md-4">
-        <div class="card mb-2">
+{% extends 'Tracker/base.html' %}
+
+{% block content %}
+    <section class="container tm-container-max-800 mt-4">
+        <h5 class="pt-5"><strong></strong></h5>
+        <!--{{statement}}-->
+        <div class="card">
             <div class="card-header h5 bg-gray-12"><h2><strong>COVID-19 Levels</strong></h2></div>
             <div class="card-body">
                 <div class="step-table m-1">
+
                     <div class="row m-1">
                         <div class="col-2 notice-typename-covid-4">
                             <p>&nbsp;</p>
@@ -19,6 +17,7 @@
                             <p>Level 4: Very High</p>
                         </div>
                     </div>
+
                     <div class="row m-1">
                         <div class="col-2 notice-typename-covid-3">
                             <p>&nbsp;</p>
@@ -27,6 +26,7 @@
                             <p>Level 3: High</p>
                         </div>
                     </div>
+
                     <div class="row m-1">
                         <div class="col-2 notice-typename-covid-2">
                             <p>&nbsp;</p>
@@ -35,6 +35,7 @@
                             <p>Level 2: Moderate</p>
                         </div>
                     </div>
+
                     <div class="row m-1">
                         <div class="col-2 notice-typename-covid-1">
                             <p>&nbsp;</p>
@@ -43,6 +44,7 @@
                             <p>Level 1: Low</p>
                         </div>
                     </div>
+
                     <div class="row m-1">
                         <div class="col-2 notice-typename-covid-unknown">
                             <p>&nbsp;</p>
@@ -51,12 +53,10 @@
                             <p>Level unknown</p>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
-    </div>
 
-{{statement}}
-
-</body>
-</html>
+    </section>
+{% endblock %}

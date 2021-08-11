@@ -117,8 +117,11 @@ def health_history(request):
 
 def travel_history(request):
     travelstr = 'Enter details of your health history here'
+    disclaimer = 'NB: This questionnaire, and its results, does not in any way act as an alternative to the diagnosis results that would be available from tests done at an actual health institution. \n This is only meant to give predictions for probability of infection based on the input provided by the site users on their health and travel history, to advice them on how urgently they may need to visit a health center of their choice'
+
     c = {
-        'travelstr': travelstr
+        'travelstr': travelstr,
+        'disclaimer': disclaimer
     }
     c.update(csrf(request))
     return render(request, 'Tracker/travel.html', c)
@@ -133,7 +136,7 @@ def feedback(request):
 
 
 def contact(request):
-    contact_info = 'The following is a list of free hotlines and toll numbers you can call whenever in any covid-19 health emergency'
+    contact_info = 'A list of free hotlines and toll numbers you can call whenever in any covid-19 related emergency'
     c = {
         'contact_info': contact_info
     }

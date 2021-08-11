@@ -1,28 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Health History</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">
-        {% load static %}
-    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
-    <link href="{% static 'css/materialize.min.css' %}" rel="stylesheet">
-    <link href="{% static 'css/health.css' %}" rel="stylesheet">
+{% extends 'Tracker/base.html' %}
 
-</head>
+{% block content %}
+<!--<div id="survey" class="font-weight-light" style="background-color: #f6e1d2;">-->
 
-<body id="survey" class="font-weight-light" style="background-color: #f6e1d2;">
-    <div class="container tm-container-max-800">
-        <div class="row">
-            <div class="col-12">
-                <header class="mt-5 mb-5 text-center">
-                    <h1 class="font-weight-bold tm-form-title" style="color: darkorange">Health Questionnaire</h1>
-                </header>
-                <form action="" method="post">
-                    <div class="tm-bg-black tm-form-block">
-                        <div class="col-xl-6">
-                            <p> 1. Indicate your Gender</p>
+    <section class="container tm-container-max-800">
+        <h1 class="font-weight-bold tm-form-title pt-4 text-center" style="color: darkorange">Health Questionnaire</h1>
+        <form action="" method="post">
+            <div class="tm-bg-black tm-form-block">
+                <div class="col-xl-6">
+                    <p> 1. Indicate your Gender</p>
 <!--                        <div class="input-field">-->
 <!--                            <input placeholder="Your Name" name="name" id="name" type="text" class="validate">-->
 <!--                        </div>-->
@@ -177,17 +163,16 @@
                     </div>
 
                 </form>
-            </div>
-        </div>
-    </div>
 
-<h6 style="color: darkslategrey;" class="font-weight-light pt-5">{{disclaimer}} <br><br></h6>
-    <script src="js/jquery-3.2.1.slim.min.js"></script>
-    <script src="js/materialize.min.js"></script>
+    </section>
+
+<h5 style="color: darkslategrey; font-size: small; font-family: cursive;" class="font-weight-bold pt-5">{{disclaimer}} <br></h5>
+<!--    <script src="js/jquery-3.2.1.slim.min.js"></script>-->
+<!--    <script src="js/materialize.min.js"></script>-->
 <!--    <script>-->
 <!--        $(document).ready(function () {-->
 <!--            $('select').formSelect();-->
 <!--        });-->
 <!--    </script>-->
-</body>
-</html>
+<!--</div>-->
+{% endblock %}

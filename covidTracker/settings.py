@@ -14,7 +14,8 @@ SECRET_KEY = '+-d)zolfzxv)w0cv!7*k$@7d6*2=m6s-7g$v21k$o--m^j0e2&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['covidtrackerdjango.herokuapp.com']
+ALLOWED_HOSTS = ['covidtrackerdjango.herokuapp.com',
+                 '127.0.0.1']
 
 
 # Application definition
@@ -74,14 +75,14 @@ WSGI_APPLICATION = 'covidTracker.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'covidTracker',
-        'USER': 'root',
-        'PASSWORD': "",
-        'HOST': "127.0.0.1",
-        'PORT': "",
-        'OPTIONS': {
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
-            },
+        'NAME': 'covidtracker',
+        'USER': 'postgres',
+        'PASSWORD': 'checkmeout',
+        'HOST': '127.0.0.1',
+        'PORT': '',
+        # 'OPTIONS': {
+        #     'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+        #     },
         }
     }
 
@@ -137,9 +138,9 @@ STATICFILES_DIRS = (
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 
-import dj_database_url
-
-prod_db = dj_database_url.config(conn_max_age=500)
-DATABASES['default'] = dj_database_url.config(default='postgres://USER:PASSWORD@HOST:PORT/NAME [2]')
-# DATABASES['default'] = dj_database_url.parse('postgres://USER:PASSWORD@HOST:PORT/NAME [2]', conn_max_age=600)
-DATABASES['default'].update(prod_db)
+# import dj_database_url
+#
+# prod_db = dj_database_url.config(conn_max_age=500)
+# DATABASES['default'] = dj_database_url.config(default='postgres://USER:PASSWORD@HOST:PORT/NAME [2]')
+# # DATABASES['default'] = dj_database_url.parse('postgres://USER:PASSWORD@HOST:PORT/NAME [2]', conn_max_age=600)
+# DATABASES['default'].update(prod_db)
