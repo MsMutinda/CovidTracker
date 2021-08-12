@@ -106,7 +106,6 @@ def covid_symptoms(request):
 def health_history(request):
     data = request.session.get('data')
     disclaimer = 'NB: This questionnaire, and its results, does not in any way act as an alternative to the diagnosis results that would be available from tests done at an actual health institution. \n This is only meant to give predictions for probability of infection based on the input provided by the site users on their health and travel history, to advice them on how urgently they may need to visit a health center of their choice'
-
     c = {
         'disclaimer': disclaimer,
         'data': data
