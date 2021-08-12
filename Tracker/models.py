@@ -24,7 +24,6 @@ class DataMap(models.Model):
 
 
 class Health(models.Model):
-    # return HttpResponse('Enter details on your health history here')
     healthqn1 = models.CharField(max_length=150, default='Question 1')
     healthqn2 = models.CharField(max_length=150, default='Question 2')
     healthqn3 = models.CharField(max_length=150, default='Question 3')
