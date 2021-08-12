@@ -206,7 +206,7 @@ traitlets==5.0.5
 Twisted==18.9.0
 
 
-ufw==0.36
+
 ujson==4.0.2
 unattended-upgrades==0.1
 uritemplate==0.6
