@@ -205,7 +205,7 @@ tqdm==4.60.0
 traitlets==5.0.5
 Twisted==18.9.0
 
-ubuntu-drivers-common==0.0.0
+
 ufw==0.36
 ujson==4.0.2
 unattended-upgrades==0.1
