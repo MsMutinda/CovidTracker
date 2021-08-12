@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b61970c-1d08-4395-b07a-3c27f3f70bac" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Tracker/templates/Tracker/health.html" beforeDir="false" afterPath="$PROJECT_DIR$/Tracker/templates/Tracker/health.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -132,7 +133,7 @@
       <workItem from="1628684717159" duration="4277000" />
       <workItem from="1628689494775" duration="6320000" />
       <workItem from="1628749013834" duration="33000" />
-      <workItem from="1628749117691" duration="2674000" />
+      <workItem from="1628749117691" duration="2972000" />
     </task>
     <servers />
   </component>
