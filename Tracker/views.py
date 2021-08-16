@@ -93,11 +93,10 @@ def symptoms(request):
     return render(request, 'Tracker/symptoms.html', c)
     
     
-@csrf_exempt
 def health(request):
     disclaimer = 'NB: This questionnaire, and its results, does not in any way act as an alternative to the diagnosis results that would be available from tests done at an actual health institution. \n This is only meant to give predictions for probability of infection based on the input provided by the site users on their health and travel history, to advice them on how urgently they may need to visit a health center of their choice'
     c = {
-        'form': HealthForm(),
+        # 'form': HealthForm(),
         'disclaimer': disclaimer
     }
     c.update(csrf(request))
@@ -105,16 +104,20 @@ def health(request):
 
 
 def save_health(request):
-    if request.method == 'POST':
+    if request.POST:
         form = HealthForm(request.POST)
-
-        if form.is_valid() and form.cleaned_data:
-            form.save(commit=False) #what does this mean/do?
-            return HttpResponse('Health data submitted successfully')
-        else:
-            return HttpResponse('Error saving your data')
-
-    return HttpResponseRedirect(reverse('Tracker:health'))
+        if form.is_valid():
+            # form.save()
+            query = {
+                'gender': form.cleaned_data.get('gender'),
+                'age': form.cleaned_data.get('age'),
+                'diseases': request.POST.getlist('diseases'),
+                'medication': form.cleaned_data.get('medication'),
+                'transplant': form.cleaned_data.get('transplant'),
+                'vaccination': form.cleaned_data.get('vaccination'),
+            }
+            Health.objects.create(**query)
+            return render(request, 'Tracker/travel.html')
 
 
 def travel(request):
@@ -134,13 +137,12 @@ def save_travel(request):
                 "risk_areas": form.cleaned_data.get("risk_areas"),
                 "crowdy_places": form.cleaned_data.get("crowdy_places"),
                 "international_travel": form.cleaned_data.get("international_travel"),
-                "covidvictim_contact": form.cleaned_data.get("covidvictim_contact"),
+                "victim_contact": form.cleaned_data.get("victim_contact"),
             }
             Travel.objects.create(**query)
-            # return HttpResponse('Form saved successfully')
+        return render(request, 'Tracker/infectionfeedback.html')
 
-            return HttpResponseRedirect(reverse('Tracker:travel'))
-
+        # return HttpResponseRedirect(reverse('Tracker:feedback'))
 
 
 def feedback(request):

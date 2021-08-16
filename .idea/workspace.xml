@@ -3,18 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="4b61970c-1d08-4395-b07a-3c27f3f70bac" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/form.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/migrations/0002_auto_20210322_1540.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/migrations/0003_auto_20210407_0704.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/migrations/0004_auto_20210413_1301.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/migrations/0005_delete_datafilter.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tracker/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tracker/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tracker/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tracker/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/Tracker/static/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/templates/Tracker/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/Tracker/templates/Tracker/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tracker/templates/Tracker/health.html" beforeDir="false" afterPath="$PROJECT_DIR$/Tracker/templates/Tracker/health.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/templates/Tracker/travel.html" beforeDir="false" afterPath="$PROJECT_DIR$/Tracker/templates/Tracker/travel.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tracker/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tracker/templates/Tracker/infectionfeedback.html" beforeDir="false" afterPath="$PROJECT_DIR$/Tracker/templates/Tracker/infectionfeedback.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tracker/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tracker/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -147,7 +139,7 @@
       <workItem from="1628749013834" duration="33000" />
       <workItem from="1628749117691" duration="16587000" />
       <workItem from="1628767446089" duration="11335000" />
-      <workItem from="1629099154073" duration="12860000" />
+      <workItem from="1629099154073" duration="25957000" />
     </task>
     <servers />
   </component>
