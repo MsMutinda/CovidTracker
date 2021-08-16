@@ -4,22 +4,19 @@
 
 <section class="container tm-container-max-800">
     <h1 class="font-weight-bold tm-form-title text-center pt-4" style="color: darkorange">Travel Questionnaire</h1>
-    <form action="" method="post">
+    <form action="{% url 'Tracker:save_travel' %}" method="post">
+        {% csrf_token %}
         <div class="tm-bg-black tm-form-block">
         <p class="mb-4"> 1. Have you been in any covid-19 high-risk areas (with the most daily reported cases in your region) recently? </p>
         <div class="col-xl-6">
                 <ul>
                     <li>
-                        <label>
-                            <input type="checkbox" name="choice1" />
-                            <span>Yes</span>
-                        </label>
+                        <input type="radio" name="risk_areas" value="Yes" />
+                        <span>Yes</span>
                     </li>
                     <li>
-                        <label>
-                            <input type="checkbox" name="choice2" />
-                            <span>No</span>
-                        </label>
+                        <input type="radio" name="risk_areas" value="No" />
+                        <span>No</span>
                     </li>
                 </ul>
         </div>
@@ -30,16 +27,12 @@
         <div class="col-xl-6">
                 <ul>
                     <li>
-                        <label>
-                            <input type="checkbox" name="choice1" />
-                            <span>Yes</span>
-                        </label>
+                        <input type="radio" name="crowdy_places" value="Yes" />
+                        <span>Yes</span>
                     </li>
                     <li>
-                        <label>
-                            <input type="checkbox" name="choice2" />
-                            <span>No</span>
-                        </label>
+                        <input type="radio" name="crowdy_places" value="No" />
+                        <span>No</span>
                     </li>
                 </ul>
         </div>
@@ -51,16 +44,12 @@
             <div class="col-xl-6">
                 <ul>
                     <li>
-                        <label>
-                            <input type="checkbox" name="choice1" />
-                            <span>Yes</span>
-                        </label>
+                        <input type="radio" name="international_travel" value="Yes" />
+                        <span>Yes</span>
                     </li>
                     <li>
-                        <label>
-                            <input type="checkbox" name="choice2" />
-                            <span>No</span>
-                        </label>
+                        <input type="radio" name="international_travel" value="No" />
+                        <span>No</span>
                     </li>
                 </ul>
             </div>
@@ -72,16 +61,12 @@
             <div class="col-xl-6">
                 <ul>
                     <li>
-                        <label>
-                            <input type="checkbox" name="choice1" />
-                            <span>Yes</span>
-                        </label>
+                        <input type="radio" name="covidvictim_contact" value="Yes" />
+                        <span>Yes</span>
                     </li>
                     <li>
-                        <label>
-                            <input type="checkbox" name="choice2" />
-                            <span>No</span>
-                        </label>
+                        <input type="radio" name="covidvictim_contact" value="No" />
+                        <span>No</span>
                     </li>
                 </ul>
         </div>

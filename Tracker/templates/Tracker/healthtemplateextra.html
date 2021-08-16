@@ -1,37 +1,40 @@
-{% extends 'Tracker/base.html' %}
-
-{% block content %}
-
     <section class="container tm-container-max-800">
         <h1 class="font-weight-bold tm-form-title pt-4 text-center" style="color: darkorange">Health Questionnaire</h1>
-        <form action="{% url 'Tracker:save_health' %}" method="post">
+        <form action="{% url 'Tracker:save_health' %}" method="post" class="healthForm">
             {% csrf_token %}
+<!--            <div>{{ form }}</div>-->
             <div class="tm-bg-black tm-form-block">
                 <div class="col-xl-6">
                     <p> 1. Indicate your Gender</p>
 <!--                    <label class="mr-4">-->
-                    <input class="with-gap" name="gender" type="radio" value="male" />
+                    <input class="with-gap" name="gender" type="radio" value="m" />
                     <span>Male</span>
+                    <label for="gender" class="mr-4"></label>
 
-                    <input class="with-gap" name="gender" type="radio" value="female" />
+                    <input class="with-gap" name="gender" type="radio" value="f" />
                     <span>Female</span>
+                    <label for="gender"></label>
                 </div>
             </div>
 
             <div class="tm-bg-black tm-form-block">
               <div class="col-xl-6">
                   <p> 2. Select your appropriate age category </p>
-                    <input class="with-gap" name="age" type="radio" value="18-25" />
+                    <input class="with-gap" name="age" type="radio" />
                     <span>18-25</span>
+                    <label for="age"></label>
 
-                    <input class="with-gap" name="age" type="radio" value="36-54" />
+                    <input class="with-gap" name="age" type="radio" />
                     <span>36-54</span>
+                    <label for="age"></label>
 
-                    <input class="with-gap" name="age" type="radio" value="55-74" />
+                    <input class="with-gap" name="age" type="radio" />
                     <span>55-74</span>
+                    <label for="age"></label>
 
-                    <input class="with-gap" name="age" type="radio" value="75 and above" />
+                    <input class="with-gap" name="age" type="radio" />
                     <span>75 and above</span>
+                    <label for="age"></label>
                  </div>
             </div>
 
@@ -39,32 +42,39 @@
                 <p class="mb-4"> 3. Do you suffer from any of the following underlying health issues, whether genetic or otherwise? Select all that apply </p>
                 <ul>
                     <li>
-                        <input class="with-gap" name="disease1" type="checkbox" value="tb" />
+                        <input class="with-gap" name="group1" value="value1" type="checkbox" />
                         <span>A. TB </span>
+                        <label for="diseases"></label>
                     </li>
                     <li>
-                        <input class="with-gap" name="disease2" type="checkbox" value="asthma" />
+                        <input class="with-gap" name="group1" value="value2" type="checkbox" />
                         <span>B. Asthma </span>
+                        <label for="diseases"></label>
                     </li>
                     <li>
-                        <input class="with-gap" name="disease3" type="checkbox" value="blood disorder" />
+                        <input class="with-gap" name="group1" value="value3" type="checkbox" />
                         <span>C. Blood disorder </span>
+                        <label for="diseases"></label>
                     </li>
                     <li>
-                        <input class="with-gap" name="disease4" type="checkbox" value="cancer" />
+                        <input class="with-gap" name="group1" value="value4" type="checkbox" />
                         <span>D. Cancer</span>
+                        <label for="diseases"></label>
                     </li>
                     <li>
-                        <input class="with-gap" name="disease5" type="checkbox" value="heart disease" />
+                        <input class="with-gap" name="group1" value="value4" type="checkbox" />
                         <span>E. Heart Disease</span>
+                        <label for="diseases"></label>
                     </li>
                     <li>
-                        <input class="with-gap" name="disease6" type="checkbox" value="diabetes" />
+                        <input class="with-gap" name="group1" value="value4" type="checkbox" />
                         <span>F. Diabetes</span>
+                        <label for="diseases"></label>
                     </li>
                     <li>
-                        <input class="with-gap" name="disease7" type="checkbox" value="obesity" />
+                        <input class="with-gap" name="group1" value="value4" type="checkbox" />
                         <span>G. Obesity</span>
+                        <label for="diseases"></label>
                     </li>
                 </ul>
                 </div>
@@ -74,12 +84,14 @@
                 <div class="col-xl-6">
                     <ul>
                         <li>
-                            <input type="radio" name="medication" value="yes" />
+                            <input type="checkbox" name="choice1" />
                             <span>Yes</span>
+                            <label for="medication"></label>
                         </li>
                         <li>
-                            <input type="radio" name="medication" value="no" />
+                            <input type="checkbox" name="choice2" />
                             <span>No</span>
+                            <label for="medication"></label>
                         </li>
                     </ul>
                 </div>
@@ -91,12 +103,14 @@
                         <div class="col-xl-6">
                             <ul>
                                 <li>
-                                    <input type="radio" name="transplant" value="yes" />
+                                    <input type="checkbox" name="choice1" />
                                     <span>Yes</span>
+                                    <label for="transplant"></label>
                                 </li>
                                 <li>
-                                    <input type="radio" name="transplant" value="no" />
+                                    <input type="checkbox" name="choice2" />
                                     <span>No</span>
+                                    <label for="transplant"></label>
                                 </li>
                             </ul>
                         </div>
@@ -108,25 +122,23 @@
                     <div class="col-xl-6">
                         <ul>
                             <li>
-                                <input type="radio" name="vaccination" value="yes" />
+                                <input type="checkbox" name="choice1" />
                                 <span>Yes</span>
+                                <label for="vaccination"></label>
                             </li>
                             <li>
-                                <input type="radio" name="vaccination" value="no" />
+                                <input type="checkbox" name="choice2" />
                                 <span>No</span>
+                                <label for="vaccination"></label>
                             </li>
                         </ul>
                     </div>
                 </div>
 
             <div class="text-center mt-5">
-                <button type="submit" class="waves-effect btn-large" style="background-color: #23998e;">Submit</button> <br>
+                <button type="submit" class="waves-effect btn-large">Submit</button> <br>
             </div>
 
         </form>
 
     </section>
-
-<h5 style="color: darkslategrey; font-size: small; font-family: cursive;" class="font-weight-bold pt-5">{{disclaimer}} <br></h5>
-
-{% endblock %}

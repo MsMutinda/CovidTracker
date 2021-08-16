@@ -9,18 +9,20 @@
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
     <link href="{% static 'css/materialize.min.css' %}" rel="stylesheet">
     <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+         <link href="{% static 'css/healthextras.css' %}" rel="stylesheet">
+
 
 </head>
 
     <body style="background-color: #fff; color: #000;">
       <div class="container">
-          <h5><a href="/" style="color: darkslateblue; font-weight: bolder; font-family: cursive;">Django Covid Tracker</a></h5>
+          <h5 style="color: darkslateblue; font-weight: bolder; font-family: cursive;">Django Covid Tracker</h5>
             <ul class="float-right list-unstyled font-weight-bold">
-                <li><a style="color: chocolate;" href="/">Home</a></li>
-                <li><a style="color: chocolate;" href="{% url 'symptoms' %}">Symptoms/Prevention</a></li>
-                <li><a style="color: chocolate;" href="{% url 'health_history' %}">Diagnosis</a></li>
-                <li><a style="color: chocolate;" href="{% url 'feedback' %}">Feedback</a></li>
-                <li><a style="color: chocolate;" href="{% url 'contact' %}">Emergency Contacts</a></li>
+                <li><a style="color: chocolate;" href="{% url 'Tracker:home' %}">Home</a></li>
+                <li><a style="color: chocolate;" href="{% url 'Tracker:symptoms' %}">Symptoms/Prevention</a></li>
+                <li><a style="color: chocolate;" href="{% url 'Tracker:health' %}">Diagnosis</a></li>
+                <li><a style="color: chocolate;" href="{% url 'Tracker:feedback' %}">Feedback</a></li>
+                <li><a style="color: chocolate;" href="{% url 'Tracker:contact' %}">Emergency Contacts</a></li>
             </ul>
       </div>
 

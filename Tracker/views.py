@@ -1,5 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.http import HttpResponse,HttpResponseRedirect
+from django.urls import reverse
 from Tracker.models import *
+from Tracker.forms import *
 from django.template.context_processors import csrf
 from django.views.decorators.csrf import csrf_exempt
 import json
@@ -15,7 +18,7 @@ pd.set_option('display.width', 1000)
 pd.set_option('colheader_justify', 'center')
 
 
-def stats(request):
+def homepage(request):
     resp = json.dumps(requests.get('https://api.covid19api.com/summary').json(), sort_keys=True, indent=4)
     respdata1 = json.loads(resp)
     # Global stats visualization
@@ -74,7 +77,7 @@ def filter_country(request):
                 request.session['data'] = data
 
 
-def covid_symptoms(request):
+def symptoms(request):
     symptom = requests.get('https://www.who.int/health-topics/coronavirus#tab=tab_3')
     data = beauty(symptom.content, 'html.parser')
     # symp = data.findAll('div', class_="sf_colsOut tabContent")
@@ -82,18 +85,6 @@ def covid_symptoms(request):
     #     symptoms = i.text
     #     [x.replace('\n', '') for x in symptoms]
     one = data.select('.tabContent li')
-    # lines = symptoms.split('.')
-    # for line in lines:
-    #     symptoms1 = line
-    #     print(line)
-
-
-
-    # symptom = urllib.request.Request(link, headers={'User-Agent': 'Mozilla/5.0'})
-    # data = urllib.request.urlopen(symptom).read()
-    # symptom1 = data.decode('ISO-8859-1')
-    # print(symptoms.headers['content-type'])
-
     c = {
         # 'symptoms': symptoms
         'one': one
@@ -103,27 +94,53 @@ def covid_symptoms(request):
     
     
 @csrf_exempt
-def health_history(request):
-    data = request.session.get('data')
+def health(request):
     disclaimer = 'NB: This questionnaire, and its results, does not in any way act as an alternative to the diagnosis results that would be available from tests done at an actual health institution. \n This is only meant to give predictions for probability of infection based on the input provided by the site users on their health and travel history, to advice them on how urgently they may need to visit a health center of their choice'
     c = {
-        'disclaimer': disclaimer,
-        'data': data
+        'form': HealthForm(),
+        'disclaimer': disclaimer
     }
     c.update(csrf(request))
     return render(request, 'Tracker/health.html', c)
 
 
-def travel_history(request):
-    travelstr = 'Enter details of your health history here'
-    disclaimer = 'NB: This questionnaire, and its results, does not in any way act as an alternative to the diagnosis results that would be available from tests done at an actual health institution. \n This is only meant to give predictions for probability of infection based on the input provided by the site users on their health and travel history, to advice them on how urgently they may need to visit a health center of their choice'
+def save_health(request):
+    if request.method == 'POST':
+        form = HealthForm(request.POST)
 
+        if form.is_valid() and form.cleaned_data:
+            form.save(commit=False) #what does this mean/do?
+            return HttpResponse('Health data submitted successfully')
+        else:
+            return HttpResponse('Error saving your data')
+
+    return HttpResponseRedirect(reverse('Tracker:health'))
+
+
+def travel(request):
+    disclaimer = 'NB: This questionnaire, and its results, does not in any way act as an alternative to the diagnosis results that would be available from tests done at an actual health institution. \n This is only meant to give predictions for probability of infection based on the input provided by the site users on their health and travel history, to advice them on how urgently they may need to visit a health center of their choice'
     c = {
-        'travelstr': travelstr,
         'disclaimer': disclaimer
     }
     c.update(csrf(request))
     return render(request, 'Tracker/travel.html', c)
+
+
+def save_travel(request):
+    if request.method == 'POST':
+        form = TravelForm(request.POST)
+        if form.is_valid():
+            query = {
+                "risk_areas": form.cleaned_data.get("risk_areas"),
+                "crowdy_places": form.cleaned_data.get("crowdy_places"),
+                "international_travel": form.cleaned_data.get("international_travel"),
+                "covidvictim_contact": form.cleaned_data.get("covidvictim_contact"),
+            }
+            Travel.objects.create(**query)
+            # return HttpResponse('Form saved successfully')
+
+            return HttpResponseRedirect(reverse('Tracker:travel'))
+
 
 
 def feedback(request):
@@ -135,7 +152,5 @@ def feedback(request):
 
 
 def contact(request):
-    c = {
-        'contact_info': contact_info
-    }
-    return render(request, 'Tracker/contact.html', c)
+
+    return render(request, 'Tracker/contact.html')
