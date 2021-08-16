@@ -145,6 +145,11 @@ def save_travel(request):
         # return HttpResponseRedirect(reverse('Tracker:feedback'))
 
 
+def health_travel_analysis(request):
+    health_results = Health.objects.all()
+    travel_results = Travel.objects.all()
+
+
 def feedback(request):
     statement = 'Here is how vulnerable you may be to covid 19 infection'
     c = {
