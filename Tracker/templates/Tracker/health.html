@@ -3,7 +3,7 @@
 {% block content %}
 
     <section class="container tm-container-max-800">
-        <h1 class="font-weight-bold tm-form-title pt-4 text-center" style="color: darkorange">Health Questionnaire</h1>
+        <h1 class="font-weight-bold tm-form-title pt-4 text-center" style="color: #d2691e">Health Questionnaire</h1>
         <form action="{% url 'Tracker:save_health' %}" method="post">
             {% csrf_token %}
             <div class="tm-bg-black tm-form-block">

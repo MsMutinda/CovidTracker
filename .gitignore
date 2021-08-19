@@ -60,3 +60,4 @@ env.bak/
 venv.bak/
 
 PyMySQL-1.0.2/
+/Tracker/lib

@@ -8,11 +8,6 @@
             {{ plot_div }}
         {% endautoescape %}
     <br><br>
-<!--    <div class="float-right" style="position: relative; right: 90px;">-->
-<!--        <input class='btn-lg' id="filter-data" name='search_item' type="search" style='border-radius: 6px;' size='15px' placeholder="Filter by country">-->
-<!--        <button class="btn-lg" type="button" onclick="send_value()" href="{% url 'stats' %}">Search</button>-->
-<!--    </div>-->
-<!--            <br><br>-->
         <h2 style="font-size: 32px;"><bold>Data per country </bold></h2><br>
         <section>
                 {{df_obj|safe}}

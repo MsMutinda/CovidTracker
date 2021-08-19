@@ -3,7 +3,7 @@
 {% block content %}
 
 <section class="container tm-container-max-800">
-    <h1 class="font-weight-bold tm-form-title text-center pt-4" style="color: darkorange">Travel Questionnaire</h1>
+    <h1 class="font-weight-bold tm-form-title text-center pt-4" style="color: #d2691e">Travel Questionnaire</h1>
     <form action="{% url 'Tracker:save_travel' %}" method="post">
         {% csrf_token %}
         <div class="tm-bg-black tm-form-block">

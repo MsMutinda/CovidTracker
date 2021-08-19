@@ -147,6 +147,7 @@ def save_travel(request):
 
 def health_travel_analysis(request):
     health_results = Health.objects.all()
+    print(health_results)
     travel_results = Travel.objects.all()
 
 
