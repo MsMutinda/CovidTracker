@@ -3,6 +3,7 @@ from django.http import HttpResponse,HttpResponseRedirect
 from django.urls import reverse
 from Tracker.models import *
 from Tracker.forms import *
+from django.core.paginator import Paginator
 from django.template.context_processors import csrf
 from django.views.decorators.csrf import csrf_exempt
 import json
@@ -21,6 +22,7 @@ pd.set_option('colheader_justify', 'center')
 def homepage(request):
     resp = json.dumps(requests.get('https://api.covid19api.com/summary').json(), sort_keys=True, indent=4)
     respdata1 = json.loads(resp)
+    request.session['respdata1'] = respdata1
     # Global stats visualization
     plotsdata = {
         'New Confirmed Cases': respdata1['Global']['NewConfirmed'],
@@ -47,15 +49,16 @@ def homepage(request):
     for item in respdata1.keys():
         if item == 'Countries':
             respdata = respdata1[item]
-    # print(*respdata, sep='\n')
             df_old = pd.DataFrame(respdata)
             df = df_old.drop(columns=["Premium", "Slug", "ID"])
             df_obj = df.to_html(classes='mystyle', index=False)
+            paginated = Paginator(df_obj, 14)
             request.session['df_obj'] = df_obj
+
     c = {
-        # 'resp_data': GetDataModel.objects.all(),
         'respdata1': respdata1,
         'df_obj': df_obj,
+        'paginated': paginated,
         # 'figplot': figplot
         'plot_div': plot_div
     }
@@ -149,6 +152,9 @@ def health_travel_analysis(request):
     health_results = Health.objects.all()
     print(health_results)
     travel_results = Travel.objects.all()
+
+
+    return render(request, 'Tracker/infectionfeedback.html')
 
 
 def feedback(request):
