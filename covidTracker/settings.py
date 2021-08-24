@@ -17,18 +17,24 @@ DEBUG = True
 ALLOWED_HOSTS = ['covidtrackerdjango.herokuapp.com',
                  '127.0.0.1']
 
-
 # Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Tracker.apps.TrackerConfig',
+    'django.contrib.sites',
 ]
+
+
+SITE_ID = 4
 
 # HANDLEBARS_LOADERS = (
 #     'djangobars.template.loaders.filesystem.Loader',
@@ -65,6 +71,16 @@ TEMPLATES = [
         },
     },
 ]
+
+AUTHENTICATION_BACKENDS = [
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 WSGI_APPLICATION = 'covidTracker.wsgi.application'
 
@@ -144,3 +160,6 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 # DATABASES['default'] = dj_database_url.config(default='postgres://USER:PASSWORD@HOST:PORT/NAME [2]')
 # # DATABASES['default'] = dj_database_url.parse('postgres://USER:PASSWORD@HOST:PORT/NAME [2]', conn_max_age=600)
 # DATABASES['default'].update(prod_db)
+
+LOGIN_REDIRECT_URL = '/'
+ACCOUNT_SIGNUP_REDIRECT_URL = '/accounts/login/'

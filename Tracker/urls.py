@@ -11,6 +11,6 @@ urlpatterns = [
     path('health/save', views.save_health, name='save_health'),
     path('travel/', views.travel, name='travel'),
     path('travel/save', views.save_travel, name='save_travel'),
-    path('feedback/', views.feedback, name='feedback'),
-    path('contacts/', views.contact, name='contact')
+    path('feedback/', views.health_travel_analysis, name='feedback'),
+    path('contacts/', views.contact, name='contact'),
 ]

@@ -3,10 +3,19 @@
   <component name="ChangeListManager">
     <list default="true" id="4b61970c-1d08-4395-b07a-3c27f3f70bac" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/templates/Tracker/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/Tracker/templates/Tracker/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tracker/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tracker/migrations/0002_auto_20210812_1333.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tracker/migrations/0003_auto_20210816_1519.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tracker/migrations/0004_rename_disease_health_diseases.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tracker/migrations/0005_auto_20210816_1848.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tracker/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tracker/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tracker/templates/Tracker/health.html" beforeDir="false" afterPath="$PROJECT_DIR$/Tracker/templates/Tracker/health.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tracker/templates/Tracker/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/Tracker/templates/Tracker/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/templates/Tracker/travel.html" beforeDir="false" afterPath="$PROJECT_DIR$/Tracker/templates/Tracker/travel.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tracker/templates/Tracker/infectionfeedback.html" beforeDir="false" afterPath="$PROJECT_DIR$/Tracker/templates/Tracker/infectionfeedback.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tracker/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tracker/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tracker/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tracker/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/covidTracker/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/covidTracker/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/covidTracker/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/covidTracker/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,7 +156,9 @@
       <workItem from="1629535530448" duration="1746000" />
       <workItem from="1629538067950" duration="3411000" />
       <workItem from="1629610014158" duration="599000" />
-      <workItem from="1629693159114" duration="1226000" />
+      <workItem from="1629693159114" duration="15890000" />
+      <workItem from="1629718904972" duration="7714000" />
+      <workItem from="1629779650160" duration="20807000" />
     </task>
     <servers />
   </component>

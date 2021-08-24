@@ -24,7 +24,8 @@ from django.conf.urls.static import static
 urlpatterns = [
     # path('', RedirectView.as_view(url='Tracker/')),  # set root url
     path('admin/', admin.site.urls),
-    path('', include('Tracker.urls'))
+    path('', include('Tracker.urls')),
+    path('accounts/', include('allauth.urls')),
 ]
 
 # enable serving of static files
