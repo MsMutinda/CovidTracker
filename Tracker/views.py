@@ -13,12 +13,21 @@ from django.template.context_processors import csrf
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.models import User
 import json
+import matplotlib.pyplot as plt
 from bs4 import BeautifulSoup as beauty
 import requests
 from six.moves import urllib
 import pandas as pd
+import matplotlib
+# from future.moves import tkinter as tk
+# try:
+#     import Tkinter as tk # this is for python2
+# except:
+#     import tkinter as tk
+# matplotlib.use('TkAgg')
+from matplotlib.pyplot import *
+import numpy as np
 from plotly.graph_objs import Bar, Layout, Figure, Scatter
-# import plotly.express as px
 from plotly.offline import plot
 from django.template.loader import render_to_string
 pd.set_option('display.width', 1000)
@@ -152,37 +161,104 @@ def save_travel(request):
         # return HttpResponseRedirect(reverse('Tracker:feedback'))
 
 
-def health_travel_analysis(request):
-    # health data analysis
-    health1 = Health.objects.raw("select * from health where user_id = 2 and age like '18-25%%' and diseases is not NULL and medication like 'Yes%%' or transplant like 'Yes%%' or vaccination like 'Yes%%'")
-    health2 = Health.objects.raw("select * from health where user_id = 2 and age like '26-35%%' and diseases is not NULL and medication like 'Yes%%' and transplant like 'Yes%%' or vaccination like 'Yes%%'")
-    health3 = Health.objects.raw("select * from health where user_id = 2 and age like '36-54%%' and diseases is not NULL or medication like 'Yes%%' or transplant like 'Yes%%' or vaccination like 'Yes%%'")
-    health4 = Health.objects.raw("select * from health where user_id = 2 and age like '55-74%%' and diseases is not NULL or medication like 'Yes%%' or transplant like 'Yes%%' or vaccination like 'Yes%%'")
-    health5 = Health.objects.raw("select * from health where user_id = 2 and age like '75 and above%%' and diseases is not NULL or medication like 'Yes%%' and transplant like 'Yes%%' and vaccination like 'Yes%%'")
-    health_results = list(chain(health1, health2, health3, health4, health5))
-    print(len(health_results))
 
-    # travel data analysis
+def health_travel_analysis(request):
+    # health data retrieval
+    # age 18-25
+    health1 = Health.objects.raw("select * from health where user_id = 2 and age like '18-25%%' and diseases is not NULL")
+    health2 = Health.objects.raw("select * from health where user_id = 2 and age like '18-25%%' and medication like 'yes%%'")
+    health3 = Health.objects.raw("select * from health where user_id = 2 and age like '18-25%%' and transplant like 'yes%%'")
+    health4 = Health.objects.raw("select * from health where user_id = 2 and age like '18-25%%' and vaccination like 'no%%'")
+    health_results1 = len(list(chain(health1, health2, health3, health4))) + 1
+
+    # age 26-35
+    health5 = Health.objects.raw("select * from health where user_id = 2 and age like '18-25%%' and diseases is not NULL")
+    health6 = Health.objects.raw("select * from health where user_id = 2 and age like '26-35%%' and medication like 'yes%%'")
+    health7 = Health.objects.raw("select * from health where user_id = 2 and age like '26-35%%' and transplant like 'yes%%'")
+    health8 = Health.objects.raw("select * from health where user_id = 2 and age like '25-35%%' and vaccination like 'no%%'")
+    health_results2 = len(list(chain(health5, health6, health7, health8))) + 2
+
+    # age 36-54
+    health9 = Health.objects.raw("select * from health where user_id = 2 and age like '18-25%%' and diseases is not NULL")
+    health10 = Health.objects.raw("select * from health where user_id = 2 and age like '36-54%%' and medication like 'yes%%'")
+    health11 = Health.objects.raw("select * from health where user_id = 2 and age like '36-54%%' and transplant like 'yes%%'")
+    health12 = Health.objects.raw("select * from health where user_id = 2 and age like '36-54%%' and vaccination like 'no%%'")
+    health_results3 = len(list(chain(health9, health10, health11, health12))) + 3
+
+    # age 55-74
+    health13 = Health.objects.raw("select * from health where user_id = 2 and age like '18-25%%' and diseases is not NULL")
+    health14 = Health.objects.raw("select * from health where user_id = 2 and age like '55-74%%' and medication like 'yes%%'")
+    health15 = Health.objects.raw("select * from health where user_id = 2 and age like '55-74%%' and transplant like 'yes%%'")
+    health16 = Health.objects.raw("select * from health where user_id = 2 and age like '55-74%%' and vaccination like 'no%%'")
+    health_results4 = len(list(chain(health13, health14, health15, health16))) + 4
+
+    # age 75 and above
+    health17 = Health.objects.raw("select * from health where user_id = 2 and age like '75 and above%%' and diseases is not NULL")
+    health18 = Health.objects.raw("select * from health where user_id = 2 and age like '75 and above%%' and medication like 'yes%%'")
+    health19 = Health.objects.raw("select * from health where user_id = 2 and age like '75 and above%%' and transplant like 'yes%%'")
+    health20 = Health.objects.raw("select * from health where user_id = 2 and age like '75 and above%%' and vaccination like 'no%%'")
+    health_results5 = len(list(chain(health17, health18, health19, health20))) + 5
+
+    # travel data retrieval
     # travel_results = Travel.objects.raw("select * from travel where (risk_areas, crowdy_places, international_travel, victim_contact) LIKE 'Yes%%'")
-    userid = request.user.id
     travel1 = Travel.objects.raw("select * from travel where user_id = 2 and risk_areas like 'Yes%%'")
     travel2 = Travel.objects.raw("select * from travel where user_id = 2 and crowdy_places like 'Yes%%'")
     travel3 = Travel.objects.raw("select * from travel where user_id = 2 and international_travel like 'Yes%%'")
     travel4 = Travel.objects.raw("select * from travel where user_id = 2 and victim_contact like 'Yes%%'")
-    travel_results = list(chain(travel1, travel2, travel3, travel4))
-    print(len(travel_results))
+    travel_results = len(list(chain(travel1, travel2, travel3, travel4)))
 
-    if len(travel_results) >= 4:
-        message = 'You are at a high risk of infection'
-    elif len(travel_results) == 3:
-        message = 'Risk of infection: MEDIUM'
-    else:
-        message = 'Risk of infection: LOW'
+    # health + travel analysis
+    person = request.user.id
+    print(person)
+    person_age = Health.objects.values('age').filter(user_id = request.user.id)   #filter user_id to capture current user and not a defined value
+    for age in person_age:
+        if age == '75 and above' and travel_results >= 4:
+            risk = health_results5 + travel_results
+            message = 'Risk of infection: LOW'
+            message2 = 'Probability of getting seriously ill: VERY HIGH'
+        elif age == '55-74' and travel_results == 3:
+            risk = health_results4 + travel_results
+            message = 'Risk of infection: LOW'
+            message2 = 'Probability of getting seriously ill: HIGH'
+        elif age == '36-54' and len(travel_results) == 2:
+            risk = health_results3 + travel_results
+            message = 'Risk of infection: MEDIUM'
+            message2 = 'Probability of getting seriously ill: MEDIUM'
+        elif age == '26-35' and len(travel_results) == 2:
+            risk = health_results2 + travel_results
+            message = 'Risk of infection: HIGH'
+            message2 = 'Probability of getting seriously ill: MEDIUM'
+        # elif age == '18-25' and len(travel_results) <= 1:
+        #     risk = health_results1 + travel_results
+        #     message = 'Risk of infection: VERY HIGH'
+        #     message2 = 'Probability of getting seriously ill: LOW'
+        else:
+            risk = health_results1 + travel_results
+            message = 'Risk of infection: VERY HIGH'
+            message2 = 'Probability of getting seriously ill: LOW'
+        # else:
+        #     risk = 00
+        #     message = 'Risk of infection: Unknown'
+        #     message2 = 'Probability of getting seriously ill: Unknown'
+        #     print('something is wrong')
+
+    # graph to visualize risk factors
+    # age = ['75 and above', '55-74', '36-64', '26-35', '18-25']
+    # infection = ['LOW', 'MEDIUM', 'HIGH', 'VERY HIGH', 'paddingdata']
+    # illness = ['LOW', 'MEDIUM', 'HIGH', 'VERY HIGH', 'paddingdata']
+    # fig, ax = matplotlib.pyplot.subplots()
+    # ax.plot(age, infection, label="Risk of infection", color='orange')
+    # ax.plot(age, illness, label="Probability of getting seriously ill", color='blue')
+    # ax.legend()
+    # plt.show()
+    # for k, v in data.items():
+    #     plt.plot(range(1, len(v) + 1), v, '.-', label=k)
 
     c = {
+        'risk': risk,
         'message': message,
+        'message2': message2,
     }
-
     return render(request, 'Tracker/infectionfeedback.html', c)
 
 
