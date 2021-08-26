@@ -4,12 +4,10 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
   <title>Covid19 symptoms and prevention</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
-{% load static %}
-  <link href="{% static 'img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+    {% load static %}
 
       <!-- Google Fonts -->
       <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -26,29 +24,29 @@
 
     {#    main css file#}
     <link href="{% static 'css/symptoms.css' %}" rel="stylesheet">
-         <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+     <link href="{% static 'css/styles.css' %}" rel="stylesheet">
 
 
 </head>
 
 <body>
-<div class="container">
+    <div class="container">
           <h5 style="color: darkslateblue; font-weight: bolder; font-family: cursive;">Django Covid Tracker</h5>
             <ul class="float-right font-weight-bold">
                 <li><a style="color: chocolate;" href="{% url 'Tracker:home' %}">Home</a></li>
                 <li><a style="color: chocolate;" href="{% url 'Tracker:symptoms' %}">Symptoms/Prevention</a></li>
                 <li><a style="color: chocolate;" href="{% url 'Tracker:health' %}">Diagnosis</a></li>
-                <li><a style="color: chocolate;" href="{% url 'Tracker:feedback' %}">Feedback</a></li>
+{#                <li><a style="color: chocolate;" href="{% url 'Tracker:feedback' %}">Feedback</a></li>#}
 <!--                <li><a style="color: chocolate;" href="{% url 'Tracker:contact' %}">Emergency Contacts</a></li>-->
             </ul>
       </div>
-    <!-- ======= Hero Section ======= -->
+
     <section id="hero" class="d-flex align-items-center">
       <div class="container">
         <h1 style="color: black;">Let's stop the spread of coronavirus!</h1>
         <h2  style="color: black;">A list of covid prevention guidelines are provided here to help us keep ourselves and those around us safe</h2>
       </div>
-    </section><!-- End Hero -->
+    </section>
 
     <main id="main">
 
@@ -171,7 +169,7 @@
   <script src="{% static 'vendor/owl.carousel/owl.carousel.min.js' %}"></script>
 
   <!-- Template Main JS File -->
-  <script src="{% static 'js/main.js' %}"></script>
+  <script src="{% static 'js/symptoms-main.js' %}"></script>
 
 </body>
 

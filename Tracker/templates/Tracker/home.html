@@ -1,21 +1,20 @@
 {% extends 'Tracker/base.html' %}
 
 {% block content %}
-<!--    <h4 class="pt-5" style="color: darkslategrey;"><b>Covid-19 statistics and exposure predictions as at {{respdata1.Global.Date}}</b></h4>-->
     <section class="container tm-home-container">
         <h4 class="pt-5 ml-4 pl-5" style="color: darkslategrey;"><b>Covid-19 statistics and exposure predictions worldwide</b></h4>
         {% autoescape off %}
             {{ plot_div }}
         {% endautoescape %}
-    <br><br>
-        <h2 style="font-size: 32px;"><bold>Data per country </bold></h2><br>
+<br>
+        <p style="font-size: 32px;"><bold>Data per country </bold></p>
         <section id="table">
 <!--            'safe' show a table instead of the html code for countries covid statistics-->
                 {{df_obj|safe}}
 <!--            {{paginated.object_list|safe}}-->
             </section>
-<br>
-</section>
+    <br>
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
     <script type="text/javascript">$(document).ready(function(){$('table').DataTable({
         "pageLength": 50

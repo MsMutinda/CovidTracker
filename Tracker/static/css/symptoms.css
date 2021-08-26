@@ -236,25 +236,6 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 24px;
 }
 
-#hero .btn-get-started {
-  font-family: "Raleway", sans-serif;
-  text-transform: uppercase;
-  font-weight: 500;
-  font-size: 14px;
-  letter-spacing: 1px;
-  display: inline-block;
-  padding: 12px 35px;
-  margin-top: 30px;
-  border-radius: 50px;
-  transition: 0.5s;
-  color: #fff;
-  background: #1977cc;
-}
-
-#hero .btn-get-started:hover {
-  background: #3291e6;
-}
-
 @media (min-width: 1024px) {
   #hero {
     background-attachment: fixed;

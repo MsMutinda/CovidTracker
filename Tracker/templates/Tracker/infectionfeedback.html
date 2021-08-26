@@ -1,12 +1,135 @@
-{% extends 'Tracker/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
 
-{% block content %}
-    <section class="container tm-container-max-800 mt-4">
-<!--        <p>Risk of infection: HIGH-->
-<!--            <br>-->
-<!--        Probability of getting seriously ill: MEDIUM</p>-->
-        {{message}}
-        <br>
-        {{message2}}
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Health & Travel Results</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+    {% load static %}
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/icofont/icofont.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/owl.carousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/venobox/venobox.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/aos/aos.css' %}" rel="stylesheet">
+
+  <!-- main CSS File -->
+  <link href="{% static 'css/feedback.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top  header-transparent ">
+    <div class="container d-flex align-items-center">
+
+      <div class="logo mr-auto">
+          <h1 style="color: darkslateblue"><strong>Django Covid Tracker</strong></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+
+      <nav class="nav-menu d-none d-lg-block">
+        <ul class="float-right font-weight-bold">
+            <li><a style="color: chocolate;" href="{% url 'Tracker:home' %}">Home</a></li>
+            <li><a style="color: chocolate;" href="{% url 'Tracker:symptoms' %}">Symptoms/Prevention</a></li>
+            <li><a style="color: chocolate;" href="{% url 'Tracker:health' %}">Diagnosis</a></li>
+{#            <li><a style="color: chocolate;" href="{% url 'Tracker:feedback' %}">Feedback</a></li>#}
+<!--                <li><a style="color: chocolate;" href="{% url 'Tracker:contact' %}">Emergency Contacts</a></li>-->
+        </ul>
+      </nav><!-- .nav-menu -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 d-lg-flex flex-lg-column justify-content-center align-items-stretch pt-5 pt-lg-0 order-2 order-lg-1" data-aos="fade-up">
+          <div>
+            <h1>The following are your results:</h1><br>
+            <h2>{{ message }}</h2>
+            <h2>{{ message2 }}</h2>
+            <a href="https://www.cdc.gov/coronavirus/2019-ncov/if-you-are-sick/steps-when-sick.html" class="download-btn"> Click for more information when sick </a> <br><br><br>
+            For prevention measures click here: <a href="{% url 'Tracker:symptoms' %}" class="download-btn"> Prevention measures</a>
+          </div>
+        </div>
+        <div class="col-lg-6 d-lg-flex flex-lg-column align-items-stretch order-1 order-lg-2 hero-img" data-aos="fade-up">
+          <img src="{% static 'img/hero-img.png' %}" class="img-fluid" alt="">
+        </div>
+      </div>
+    </div>
+
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <section id="features" class="features">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>What to do next?</h2>
+        </div>
+
+        <div class="row no-gutters">
+          <div class="col-xl-7 d-flex align-items-stretch order-2 order-lg-1">
+            <div class="content d-flex flex-column justify-content-center">
+              <div class="row">
+                <div class="col-md-6 icon-box" data-aos="fade-up">
+                  <i class="bx bx-receipt"></i>
+                  <h4>Step 1</h4>
+                  <p>Visit your nearest healthcare provider to get a health check up</p>
+                </div>
+                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
+                  <i class="bx bx-cube-alt"></i>
+                  <h4>Step 2</h4>
+                  <p>Quarantine yourself for atleast 2weeks before resuming contact with others </p>
+                </div>
+                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
+                  <i class="bx bx-images"></i>
+                  <h4>Step 3</h4>
+                  <p>Stay in touch with your doctor</p>
+                </div>
+                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
+                  <i class="bx bx-shield"></i>
+                  <h4>Step 4</h4>
+                  <p>Stay home as long as you are feeling sick</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </section>
-{% endblock %}
+
+  </main><!-- End #main -->
+
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'vendor/jquery.easing/jquery.easing.min.js' %}"></script>
+  <script src="{% static 'vendor/owl.carousel/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'vendor/venobox/venobox.min.js' %}"></script>
+  <script src="{% static 'vendor/aos/aos.js' %}"></script>
+
+  <!-- main JS File -->
+  <script src="{% static 'js/feedback-main.js' %}"></script>
+
+</body>
+
+</html>

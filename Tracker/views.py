@@ -221,23 +221,23 @@ def health_travel_analysis(request):
     # for age in person_age:
     if age == '75 and above' and travel_results >= 4:
         risk = health_results5 + travel_results
-        message = 'Risk of infection: LOW'
+        message = 'Risk of infection with Covid-19: LOW'
         message2 = 'Probability of getting seriously ill: VERY HIGH'
     elif age == '55-74' and travel_results == 3:
         risk = health_results4 + travel_results
-        message = 'Risk of infection: LOW'
+        message = 'Risk of infection with Covid-19: LOW'
         message2 = 'Probability of getting seriously ill: HIGH'
     elif age == '36-54' and len(travel_results) == 2:
         risk = health_results3 + travel_results
-        message = 'Risk of infection: MEDIUM'
+        message = 'Risk of infection with Covid-19: MEDIUM'
         message2 = 'Probability of getting seriously ill: MEDIUM'
     elif age == '26-35' and len(travel_results) == 2:
         risk = health_results2 + travel_results
-        message = 'Risk of infection: HIGH'
+        message = 'Risk of infection with Covid-19: HIGH'
         message2 = 'Probability of getting seriously ill: MEDIUM'
     # age == '18-25' and len(travel_results) == 1
     risk = health_results1 + travel_results
-    message = 'Risk of infection: VERY HIGH'
+    message = 'Risk of infection with Covid-19: VERY HIGH'
     message2 = 'Probability of getting seriously ill: LOW'
 
     c = {
@@ -254,7 +254,7 @@ def visualize_feedback(request):
     infection = ['LOW', 'MEDIUM', 'HIGH', 'VERY HIGH', 'paddingdata']
     illness = ['LOW', 'MEDIUM', 'HIGH', 'VERY HIGH', 'paddingdata']
     fig, ax = matplotlib.pyplot.subplots()
-    ax.plot(age, infection, label="Risk of infection", color='orange')
+    ax.plot(age, infection, label="Risk of infection with Covid-19", color='orange')
     ax.plot(age, illness, label="Probability of getting seriously ill", color='blue')
     ax.legend()
     plt.show()
