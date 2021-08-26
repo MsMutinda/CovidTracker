@@ -1,68 +1,178 @@
-{% extends 'Tracker/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
 
-{% block content %}
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-<section class="container">
-    <h3 class="card-header"> Covid-19 symptoms </h3>
-    <!--{{symptoms}}--><br>
-    <div class="card-body">
-        <p>COVID-19 affects different people in different ways.
-            Most infected people will develop mild to moderate illness and recover without hospitalization.</p>
+  <title>Covid19 symptoms and prevention</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+{% load static %}
+  <link href="{% static 'img/apple-touch-icon.png' %}" rel="apple-touch-icon">
 
-        <p><b>Most common symptoms:</b></p>
-        <ul>
-            <li>fever.</li>
-            <li>dry cough.</li>
-            <li>tiredness.</li>
-            <li>fever.</li>
-        </ul>
+      <!-- Google Fonts -->
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
-        <p><b>Less common symptoms:</b></p>
-        <ul>
-            <li>aches and pains.</li>
-            <li>sore throat.</li>
-            <li>diarrhoea.</li>
-            <li>conjunctivitis.</li>
-            <li>headache.</li>
-            <li>loss of taste or smell.</li>
-            <li>a rash on skin, or discolouration of fingers or toes.</li>
-        </ul>
+    <!-- Vendor CSS Files -->
+     <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+     <link href="{% static 'vendor/icofont/icofont.min.css' %}" rel="stylesheet">
+     <link href="{% static 'vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+     <link href="{% static 'vendor/venobox/venobox.css' %}" rel="stylesheet">
+     <link href="{% static 'vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+     <link href="{% static 'vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+     <link href="{% static 'vendor/owl.carousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+     <link href="{% static 'vendor/bootstrap-datepicker/css/bootstrap-datepicker.min.css' %}" rel="stylesheet">
 
-        <p><b>Serious symptoms:</b></p>
-        <ul>
-            <li>difficulty breathing or shortness of breath.</li>
-            <li>chest pain or pressure.</li> <li>loss of speech or movement.</li>
-        </ul>
-    </div>
+    {#    main css file#}
+    <link href="{% static 'css/symptoms.css' %}" rel="stylesheet">
+         <link href="{% static 'css/styles.css' %}" rel="stylesheet">
 
 
-    <h3 class="card-header"> Prevention/Safety measures</h3><br><br>
-    <!--{{one}}-->
-    <div class="card-body">
-        <ul>
-            <li><strong><a style="color:saddlebrown"  href="/emergencies/diseases/novel-coronavirus-2019/advice-for-public">
-                Protect yourself: advice for the public</a> </strong></li>
-            <li><strong>
-                <a style="color:saddlebrown" href="https://www.who.int/news-room/q-a-detail/coronavirus-disease-covid-19">
-                    Myth busters</a></strong></li>
-            <li>Wash your hands regularly with soap and water, or clean them with alcohol-based hand rub. </li>
-            <li>Maintain at least 1 metre distance between you and people coughing or sneezing. </li>
-            <li>Avoid touching your face. </li>
-            <li>Cover your mouth and nose when coughing or sneezing. </li>
-            <li>Stay home if you feel unwell. </li>
-            <li>Refrain from smoking and other activities that weaken the lungs. </li>
-            <li>Practice physical distancing by avoiding unnecessary travel and staying away from large groups of people.</li>
-            <li>Increase ventilation indoors if you have visitors - open a window</li>
-            <li>Maintain a healthy weight and stay as physically fit as you can</li>
-        </ul>
-    </div>
-</section>
+</head>
 
-    <h5 style="color: darkslategrey; font-size: small; font-family: cursive;" class="font-weight-bold pt-5">
-        <b>NB: </b>On average it takes 5–6 days from when someone
-                is infected with the virus for symptoms to show, however it can take up to 14 days.<br>Seek immediate medical attention if you have serious symptoms.  Always call before visiting
-            your doctor or health facility. People with mild symptoms who are otherwise healthy should
-                manage their symptoms at home.
-        </h5>
+<body>
+<div class="container">
+          <h5 style="color: darkslateblue; font-weight: bolder; font-family: cursive;">Django Covid Tracker</h5>
+            <ul class="float-right font-weight-bold">
+                <li><a style="color: chocolate;" href="{% url 'Tracker:home' %}">Home</a></li>
+                <li><a style="color: chocolate;" href="{% url 'Tracker:symptoms' %}">Symptoms/Prevention</a></li>
+                <li><a style="color: chocolate;" href="{% url 'Tracker:health' %}">Diagnosis</a></li>
+                <li><a style="color: chocolate;" href="{% url 'Tracker:feedback' %}">Feedback</a></li>
+<!--                <li><a style="color: chocolate;" href="{% url 'Tracker:contact' %}">Emergency Contacts</a></li>-->
+            </ul>
+      </div>
+    <!-- ======= Hero Section ======= -->
+    <section id="hero" class="d-flex align-items-center">
+      <div class="container">
+        <h1 style="color: black;">Let's stop the spread of coronavirus!</h1>
+        <h2  style="color: black;">A list of covid prevention guidelines are provided here to help us keep ourselves and those around us safe</h2>
+      </div>
+    </section><!-- End Hero -->
 
-{% endblock %}
+    <main id="main">
+
+      <!-- ======= Why Us Section ======= -->
+      <section id="why-us" class="why-us">
+        <div class="container">
+
+          <div class="row">
+            <div class="col-lg-4 d-flex align-items-stretch">
+              <div class="content">
+                <h3>Some facts about the covid19 virus:</h3>
+                <p>It spreads primarily through droplets of saliva or discharge from the nose when an infected person coughs or sneezes</p>
+                <p>COVID-19 can be severe, and has caused millions of deaths around the world as well as lasting health problems in some who have survived the illness.</p><br><br><br><br>
+              </div>
+            </div>
+            <div class="col-lg-8 d-flex">
+              <div class="icon-boxes d-flex flex-column justify-content-left">
+                <div class="row">
+                  <div class="col-xl-4 d-flex align-items-stretch">
+                    <div class="icon-box mt-4 mt-xl-0">
+                      <i class="bx bx-receipt"></i>
+                      <h4>Most common symptoms</h4>
+                        Fever.<br>
+                        Dry cough.<br>
+                        Tiredness.<br>
+                        Aches and pains
+                    </div>
+                  </div>
+                  <div class="col-xl-4 d-flex align-items-stretch">
+                    <div class="icon-box mt-4 mt-xl-0">
+                      <i class="bx bx-cube-alt"></i>
+                      <h4>Less common symptoms</h4>
+                        Sore throat.<br>
+                        Diarrhoea.<br>
+                        Conjuctivitis.<br>
+                        Headache.<br>
+                        Loss of taste and smell.<br>
+                        A rash on the skin, or discolouration of fingers or toes.<br>
+
+                    </div>
+                  </div>
+                  <div class="col-xl-4 d-flex align-items-stretch">
+                    <div class="icon-box mt-4 mt-xl-0">
+                      <i class="bx bx-images"></i>
+                      <h4>Serious symptoms</h4>
+                        Difficulty breathing or shortness of breath.<br>
+                        Chest pain or pressure.<br>
+                        Loss of speech or movement
+                    </div>
+                  </div>
+                </div>
+              </div><!-- End .content-->
+            </div>
+          </div>
+
+        </div>
+      </section><!-- End Why Us Section -->
+
+      <!-- ======= Services Section ======= -->
+      <section id="services" class="services">
+        <div class="container">
+
+          <div class="section-title">
+            <h2>Prevention measures</h2>
+            <!-- <p>COVID-19 affects different people in different ways.
+              Most infected people will develop mild to moderate illness and recover without hospitalization.</p> -->
+          </div>
+
+          <div class="row mt-2" style="position: relative; left: 130px;">
+            <div class="col-lg-5 col-md-5 d-flex align-items-stretch">
+              <div class="icon-box">
+                <div class="icon"><i class="icofont-heart-beat"></i></div>
+                <h4><a href="">Protecting yourself</a></h4><br>
+                  Maintain physical distance when in public spaces.<br>
+                  Refrain from smoking and other activities that weaken the lungs. <br>
+                  Avoid touching your face  <br>
+                  Clean your hands regularly with soap and water, or using an alcohol-based sanitizer.<br>
+                  Maintain a healthy weight and stay as physically fit as you can
+              </div>
+            </div>
+
+            <div class="col-lg-5 col-md-5 d-flex align-items-stretch mt-4 mt-md-0">
+              <div class="icon-box">
+                <div class="icon"><i class="icofont-drug"></i></div>
+                <h4><a href="">Protecting others</a></h4><br>
+                  Stay home if you're feeling unwell.<br>
+                  Cover your mouth when coughing or sneezing. <br>
+                  Wear a mask when distance cannot be maintained <br>
+                  Keep rooms ventilated when with visitors at home
+              </div>
+            </div>
+
+            <!-- <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
+              <div class="icon-box">
+                <div class="icon"><i class="icofont-dna-alt-2"></i></div>
+                <h4><strong> NOTE:</strong></h4><br>
+                <p>On average it takes 5–6 days from when someone
+                  is infected with the virus for symptoms to show, however it can take up to 14 days.<br>Seek immediate medical attention if you have serious symptoms.  Always call before visiting
+              your doctor or health facility. People with mild symptoms who are otherwise healthy should
+                  manage their symptoms at home.</p>
+              </div>
+            </div> -->
+          </div>
+
+        </div>
+      </section><!-- End Services Section -->
+
+
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+    </main>
+  </section>
+
+    <!-- Vendor JS Files -->
+  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'vendor/jquery.easing/jquery.easing.min.js' %}"></script>
+  <script src="{% static 'vendor/venobox/venobox.min.js' %}"></script>
+  <script src="{% static 'vendor/owl.carousel/owl.carousel.min.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'js/main.js' %}"></script>
+
+</body>
+
+</html>

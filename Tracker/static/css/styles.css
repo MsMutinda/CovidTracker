@@ -1,13 +1,7 @@
 /*home styles*/
-
-/*body {*/
-/*    background: rgb(2, 0, 36);*/
-/*    background: radial-gradient(circle,*/
-/*    rgba(2,0,36,0.29315476190476186) 0%,*/
-/*    rgba(160,139,166,0.2679446778711485) 100%, rgba(0,212,255,1) 100%);*/
-/*}*/
 body {
   padding: 10px;
+    font-family: "Open Sans", sans-serif;
 }
 
 ul, li {
