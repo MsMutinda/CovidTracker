@@ -6,36 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4b61970c-1d08-4395-b07a-3c27f3f70bac" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/static/css/symptoms.css" beforeDir="false" afterPath="$PROJECT_DIR$/Tracker/static/css/symptoms.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/static/img/about.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/static/img/apple-touch-icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/static/img/departments-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/static/img/departments-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/static/img/departments-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/static/img/departments-4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/static/img/departments-5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/static/img/doctors/doctors-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/static/img/doctors/doctors-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/static/img/doctors/doctors-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/static/img/doctors/doctors-4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/static/img/favicon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/static/img/gallery/gallery-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/static/img/gallery/gallery-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/static/img/gallery/gallery-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/static/img/gallery/gallery-4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/static/img/gallery/gallery-5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/static/img/gallery/gallery-6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/static/img/gallery/gallery-7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/static/img/gallery/gallery-8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/static/img/testimonials/testimonials-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/static/img/testimonials/testimonials-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/static/img/testimonials/testimonials-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/static/img/testimonials/testimonials-4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/static/img/testimonials/testimonials-5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/static/js/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/templates/Tracker/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/Tracker/templates/Tracker/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/templates/Tracker/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/Tracker/templates/Tracker/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tracker/templates/Tracker/infectionfeedback.html" beforeDir="false" afterPath="$PROJECT_DIR$/Tracker/templates/Tracker/infectionfeedback.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tracker/templates/Tracker/symptoms.html" beforeDir="false" afterPath="$PROJECT_DIR$/Tracker/templates/Tracker/symptoms.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tracker/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tracker/views.py" afterDir="false" />
     </list>
@@ -196,7 +166,12 @@
       <workItem from="1629955011287" duration="2861000" />
       <workItem from="1629957933686" duration="3721000" />
       <workItem from="1629961684861" duration="1537000" />
-      <workItem from="1629963300136" duration="7179000" />
+      <workItem from="1629963300136" duration="7986000" />
+      <workItem from="1629986511495" duration="1292000" />
+      <workItem from="1630655126190" duration="2184000" />
+      <workItem from="1633423492472" duration="761000" />
+      <workItem from="1633505965959" duration="410000" />
+      <workItem from="1633506681961" duration="40000" />
     </task>
     <servers />
   </component>

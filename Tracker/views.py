@@ -162,10 +162,10 @@ def save_travel(request):
         # return HttpResponseRedirect(reverse('Tracker:feedback'))
 
 
-
 def health_travel_analysis(request):
     # age 18-25
     health1 = Health.objects.raw("select * from health where is_active = true and age like '18-25%%' and diseases is not NULL")
+    # healthcopy = Health.objects.filter(is_active=True, age='18-25', diseases=None)
     health2 = Health.objects.raw("select * from health where is_active = true and age like '18-25%%' and medication like 'yes%%'")
     health3 = Health.objects.raw("select * from health where is_active = true and age like '18-25%%' and transplant like 'yes%%'")
     health4 = Health.objects.raw("select * from health where is_active = true and age like '18-25%%' and vaccination like 'no%%'")
@@ -211,12 +211,15 @@ def health_travel_analysis(request):
 
     # change above health and travel results to use actual logged in user id and not defined user id
 
-    age = Health.objects.values('age').filter(user_id = request.user.id)
-    all = User.objects.all().filter(is_superuser = False, is_active = True)
-    print(all)
+    age = Health.objects.values('age').filter(user_id=request.user.id)
 
-    print(age)
-    # person_age = Health.objects.values('age').filter(is_active = True)
+# compare results from the below 2 lines
+    person_age = Health.objects.filter(is_active=True)
+    person_age2 = Health.objects.raw('select * from health where is_active = True')
+    print('person age 1 is:')
+    print(person_age)
+    print('person age 2 is: ')
+    print(person_age2)
 
     # for age in person_age:
     if age == '75 and above' and travel_results >= 4:
