@@ -1,0 +1,83 @@
+.counter_box_outer{
+    position: relative;
+    margin-top: 45px;
+    margin-bottom: 60px;
+    padding:40px;
+    background:#fff;border-radius:25px;
+    box-shadow:0px 10px 25px 0px rgb(178 186 204 / 70%);
+  }
+  .counter_box.type_two{
+    position:relative;
+    float:left;
+    padding: 0px 10px;
+    width: 33.33%
+  }
+  .counter_box.type_two .one{
+    padding-left: 0px;
+  }
+  .headingh1{
+    font-family: 'Nunito', sans-serif;
+    font-size: 36px;
+    color: #274782;
+    line-height: 42px;
+    font-weight: 800;
+
+  }
+  .headingh4{
+    font-family: 'Nunito', sans-serif;
+    font-size: 23px;
+    color: #274782;
+    line-height: 42px;
+    font-weight: 800;
+
+  }
+  .headingh5 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 400;
+  }
+  .headingp {
+    font-family: 'Nunito', sans-serif;
+    font-size: 13px;
+    line-height: 30px;
+    font-weight: 400;
+  }
+  .headingh6{
+    font-family: 'Nunito', sans-serif;
+    text-transform: uppercase;
+    font-size: 14px;
+    margin-bottom:0;
+    letter-spacing:2px;
+    color: #dd2d4e;
+    line-height: 28px;
+    font-weight: 700;
+  }
+  .mrwhite {
+    color:#fff;!important
+  }
+  .nunitofont {
+    font-family: 'Nunito', sans-serif;
+  }
+  .counter_box.type_two .image_box {
+    float: left;
+  }
+  .counter_box.type_two .text_box {
+    position: relative;
+    /*margin-left: 80px;*/
+  }
+  .odometer.odometer-auto-theme, .odometer.odometer-theme-default {
+    font-family: 'Nunito', sans-serif;
+    line-height: 1.1em;
+    display:inline-block;
+    vertical-align:middle;
+    position:relative;
+  }
+  .odometer.odometer-auto-theme .odometer-digit, .odometer.odometer-theme-default .odometer-digit {
+      display: inline-block;
+      vertical-align: middle;
+      position: relative;
+  }
+  .counter_box.type_two .three{
+    padding-left: 0px;
+  }

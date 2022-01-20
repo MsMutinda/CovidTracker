@@ -5,7 +5,7 @@ from django.conf.urls.static import static
 
 app_name = 'Tracker'
 urlpatterns = [
-    path('', views.homepage, name='home'),
+    path('home', views.homepage, name='home'),
     path('symptoms/', views.symptoms, name='symptoms'),
     path('health/', views.health, name='health'),
     path('health/save', views.save_health, name='save_health'),

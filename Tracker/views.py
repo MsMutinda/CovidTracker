@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 from Tracker.models import *
+from datetime import datetime
 from Tracker.forms import *
 from itertools import chain
 from django.contrib.auth.decorators import login_required
@@ -35,6 +36,33 @@ pd.set_option('colheader_justify', 'center')
 
 
 def homepage(request):
+    url = "https://covid-193.p.rapidapi.com/statistics?country=kenya"
+    headers = {
+        'x-rapidapi-key': "6672acff71msha2668ee10af537bp1245a2jsn31635e6b6758",
+        'x-rapidapi-host': "covid-193.p.rapidapi.com"
+    }
+    mylist = []
+    querystring = {"country": "kenya"}
+    response = requests.request("GET", url, headers=headers, params=querystring).text
+    our_json_data = json.loads(response)
+
+    country = our_json_data['response'][0]['country']
+    population = our_json_data['response'][0]['population']
+    new_cases = our_json_data['response'][0]['cases']['new']
+    active_cases = our_json_data['response'][0]['cases']['active']
+    critical = our_json_data['response'][0]['cases']['critical']
+    recovered = our_json_data['response'][0]['cases']['recovered']
+    new_deaths = our_json_data['response'][0]['deaths']['new']
+    total_deaths = our_json_data['response'][0]['deaths']['total']
+    tests = our_json_data['response'][0]['tests']['total']
+    day = our_json_data['response'][0]['day']
+    day_object = datetime.fromisoformat(day)
+    new_day_object = day_object.strftime("%d %b %Y")
+    time = our_json_data['response'][0]['time']
+    datetime_object = datetime.fromisoformat(time)
+    new_datetime_object = datetime_object.strftime("%d-%b-%Y (%H:%M:%S.%f)")
+
+
     resp = json.dumps(requests.get('https://api.covid19api.com/summary').json(), sort_keys=True, indent=4)
     respdata1 = json.loads(resp)
     request.session['respdata1'] = respdata1
@@ -68,14 +96,35 @@ def homepage(request):
             # df_obj = paginated.get_page(page_number)
             request.session['df_obj'] = df_obj
 
-    c = {
+    # c = {
+    #     'respdata1': respdata1,
+    #     'df_obj': df_obj,
+    #     # 'figplot': figplot
+    #     'plot_div': plot_div
+    # }
+    # c.update(csrf(request))
+    context = {
+        "country": country,
+        "population": population,
+        "new_cases": new_cases,
+        "active_cases": active_cases,
+        "critical": critical,
+        "recovered": recovered,
+        "new_deaths": new_deaths,
+        "total_deaths": total_deaths,
+        "tests": tests,
+        "day": new_day_object,
+        "time": new_datetime_object,
+
         'respdata1': respdata1,
         'df_obj': df_obj,
         # 'figplot': figplot
         'plot_div': plot_div
     }
-    c.update(csrf(request))
-    return render(request, 'Tracker/home.html', c)
+
+    context.update(csrf(request))
+    # return render(request, 'Tracker/home.html', c)
+    return render(request, 'Tracker/home.html', context)
 
 
 @csrf_exempt
@@ -130,7 +179,7 @@ def save_health(request):
                 'vaccination': form.cleaned_data.get('vaccination'),
             }
             Health.objects.create(**query)
-            return render(request, 'Tracker/travel.html')
+            # return render(request, 'Tracker/travel.html')
 
         return render(request, 'Tracker/travel.html')
 
@@ -158,6 +207,7 @@ def save_travel(request):
                 "victim_contact": form.cleaned_data.get("victim_contact"),
             }
             Travel.objects.create(**query)
+            
         return render(request, 'Tracker/infectionfeedback.html')
         # return HttpResponseRedirect(reverse('Tracker:feedback'))
 
@@ -172,21 +222,21 @@ def health_travel_analysis(request):
     health_results1 = len(list(chain(health1, health2, health3, health4))) + 1
 
     # age 26-35
-    health5 = Health.objects.raw("select * from health where is_active = true and age like '18-25%%' and diseases is not NULL")
+    health5 = Health.objects.raw("select * from health where is_active = true and age like '26-35%%' and diseases is not NULL")
     health6 = Health.objects.raw("select * from health where is_active = true and age like '26-35%%' and medication like 'yes%%'")
     health7 = Health.objects.raw("select * from health where is_active = true and age like '26-35%%' and transplant like 'yes%%'")
-    health8 = Health.objects.raw("select * from health where is_active = true and age like '25-35%%' and vaccination like 'no%%'")
+    health8 = Health.objects.raw("select * from health where is_active = true and age like '26-35%%' and vaccination like 'no%%'")
     health_results2 = len(list(chain(health5, health6, health7, health8))) + 2
 
     # age 36-54
-    health9 = Health.objects.raw("select * from health where is_active = true and age like '18-25%%' and diseases is not NULL")
+    health9 = Health.objects.raw("select * from health where is_active = true and age like '36-54%%' and diseases is not NULL")
     health10 = Health.objects.raw("select * from health where is_active = true and age like '36-54%%' and medication like 'yes%%'")
     health11 = Health.objects.raw("select * from health where is_active = true and age like '36-54%%' and transplant like 'yes%%'")
     health12 = Health.objects.raw("select * from health where is_active = true and age like '36-54%%' and vaccination like 'no%%'")
     health_results3 = len(list(chain(health9, health10, health11, health12))) + 3
 
     # age 55-74
-    health13 = Health.objects.raw("select * from health where is_active = true and age like '18-25%%' and diseases is not NULL")
+    health13 = Health.objects.raw("select * from health where is_active = true and age like '55-74%%' and diseases is not NULL")
     health14 = Health.objects.raw("select * from health where is_active = true and age like '55-74%%' and medication like 'yes%%'")
     health15 = Health.objects.raw("select * from health where is_active = true and age like '55-74%%' and transplant like 'yes%%'")
     health16 = Health.objects.raw("select * from health where is_active = true and age like '55-74%%' and vaccination like 'no%%'")
@@ -198,6 +248,7 @@ def health_travel_analysis(request):
     health19 = Health.objects.raw("select * from health where is_active = true and age like '75 and above%%' and transplant like 'yes%%'")
     health20 = Health.objects.raw("select * from health where is_active = true and age like '75 and above%%' and vaccination like 'no%%'")
     health_results5 = len(list(chain(health17, health18, health19, health20))) + 5
+    print(health_results5)
 
     # travel data retrieval
     # travel_results = Travel.objects.raw("select * from travel where (risk_areas, crowdy_places, international_travel, victim_contact) LIKE 'Yes%%'")
@@ -206,8 +257,6 @@ def health_travel_analysis(request):
     travel3 = Travel.objects.raw("select * from travel where is_active = true and international_travel like 'Yes%%'")
     travel4 = Travel.objects.raw("select * from travel where is_active = true and victim_contact like 'Yes%%'")
     travel_results = len(list(chain(travel1, travel2, travel3, travel4)))
-
-    # health + travel analysis
 
     # change above health and travel results to use actual logged in user id and not defined user id
 
@@ -268,6 +317,7 @@ def visualize_feedback(request):
 
     }
     return render(request, 'Tracker/infectionfeedback.html', c)
+
 
 def feedback(request):
     statement = 'Here is how vulnerable you may be to covid 19 infection'

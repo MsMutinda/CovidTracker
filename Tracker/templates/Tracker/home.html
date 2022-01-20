@@ -2,22 +2,95 @@
 
 {% block content %}
     <section class="container tm-home-container">
-        <h4 class="pt-5 ml-4 pl-5" style="color: darkslategrey;"><b>Covid-19 statistics and exposure predictions worldwide</b></h4>
-        {% autoescape off %}
-            {{ plot_div }}
-        {% endautoescape %}
-<br>
-        <p style="font-size: 32px;"><bold>Data per country </bold></p>
+{#        {% autoescape off %}#}
+{#            {{ plot_div }}#}
+{#        {% endautoescape %}#}
+
+        {% load static %}
+
+        <div class="counter_box_outer">
+          <div class="row">
+             <div class="col-lg-4 col-md-12">
+                <div class="heading tp_one">
+                   <h6 class="headingh6">Countrywide Tracker</h6>
+                   <h1 class="headingh1"><b>Pandemic <br>Statistics</b></h1>
+                   <p class="text-muted" style="font-family: 'Nunito', sans-serif;"><i>Last updated: {{time}}</i></p>
+                </div>
+             </div>
+
+             <div class="col-lg-8 col-md-12 d-flex">
+                <div style="position: relative; margin: auto 0 auto 50px; width:100%;">
+                   <div class="counter_box type_two one">
+                      <div class="image_box">
+                         <img src="{% static 'img/fun-1.svg' %}" class="img-fluid" alt="svg_iage">
+                      </div>
+                      <div class="text_box">
+                         <h2>
+                           <span class="odometer odometer-auto-theme">
+                           <div class="odometer-inside">
+                             <span class="odometer-digit" style="color:#ffa800;font-size:23px;!important"><b>{{new_cases}}</b></span>
+                            </div>
+                          </span>
+                        </h2>
+                         <h6 class="small text-muted">New Cases</h6>
+                      </div>
+                   </div>
+                   <div class="counter_box type_two two">
+                      <div class="image_box">
+                         <img src="{% static 'img/fun-2.svg' %}" class="img-fluid" alt="svg_iage">
+                      </div>
+                      <div class="text_box">
+                        <h2>
+                          <span class="odometer odometer-auto-theme">
+                              <div class="odometer-inside">
+                                <span class="odometer-digit" style="color:#252c36;font-size:23px;!important"><b>{{new_deaths}}</b></span>
+                              </div>
+                            </span>
+                          </h2>
+                        <h6 class="small text-muted">New Deaths</h6>
+                      </div>
+                   </div>
+                   <div class="counter_box type_two three">
+                      <div class="image_box">
+                         <img src="{% static 'img/fun-3.svg' %}" class="img-fluid" alt="svg_iage">
+                      </div>
+                      <div class="text_box">
+                        <h2>
+                          <span class="odometer odometer-auto-theme">
+                              <div class="odometer-inside">
+                                <span class="odometer-digit" style="color:#7da60c;font-size:23px;!important"><b>{{recovered}}</b></span>
+                              </div>
+                            </span>
+                          </h2>
+                         <h6 class="small text-muted">Recovered</h6>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+        </div>
+    </section>
+
+
+{#<div class="container">#}
+{#  <canvas id="line-chart" width="900" height="450"></canvas>#}
+{#</div>#}
+{#<br><br>#}
+
+    <section class="home-container"
+        <p style="font-size: 32px;"><bold>Data per country worldwide </bold></p>
         <section id="table">
 <!--            'safe' show a table instead of the html code for countries covid statistics-->
                 {{df_obj|safe}}
 <!--            {{paginated.object_list|safe}}-->
             </section>
     <br>
-  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+        <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+    </section>
 
-    <script type="text/javascript">$(document).ready(function(){$('table').DataTable({
+    <script type="text/javascript">$(document).ready(function(){$('table').dataTable({
         "pageLength": 50
-    });});</script>
+    });});
+    </script>
 
 {% endblock %}

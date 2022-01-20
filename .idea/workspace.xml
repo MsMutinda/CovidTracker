@@ -5,9 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4b61970c-1d08-4395-b07a-3c27f3f70bac" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tracker/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/Tracker/static/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tracker/templates/Tracker/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/Tracker/templates/Tracker/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tracker/templates/Tracker/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/Tracker/templates/Tracker/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tracker/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tracker/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tracker/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tracker/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +47,9 @@
     <setting file="file://$PROJECT_DIR$/Tracker/templates/Tracker/travel.html" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tracker/templates/Tracker/health.html" root0="FORCE_HIGHLIGHTING" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProblemsViewState">
     <option name="selectedIndex" value="1" />
   </component>
@@ -61,20 +67,23 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/covidTracker/settings.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Tracker/static/img" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.stylelint" value="true" />
     <property name="node.js.selected.package.stylelint" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.django.DjangoModulesConfigurable" />
+    <property name="settings.editor.selected.configurable" value="SQL Dialects" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Tracker/static/img" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Tracker/img" />
       <recent name="$PROJECT_DIR$/Tracker/static/css" />
       <recent name="$PROJECT_DIR$/Tracker/static/js" />
       <recent name="$PROJECT_DIR$/Tracker" />
       <recent name="$PROJECT_DIR$/Tracker/static" />
-      <recent name="$PROJECT_DIR$/Tracker/templates/Tracker" />
     </key>
   </component>
   <component name="RunManager">
@@ -172,7 +181,10 @@
       <workItem from="1633423492472" duration="761000" />
       <workItem from="1633505965959" duration="410000" />
       <workItem from="1633506681961" duration="40000" />
-      <workItem from="1633508430997" duration="1137000" />
+      <workItem from="1633508430997" duration="1412000" />
+      <workItem from="1642657695650" duration="4080000" />
+      <workItem from="1642664600929" duration="5437000" />
+      <workItem from="1642670672630" duration="1199000" />
     </task>
     <servers />
   </component>
@@ -193,10 +205,9 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/covidTracker$manage.coverage" NAME="manage Coverage Results" MODIFIED="1618985403049" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CovidTracker$manage.coverage" NAME="manage Coverage Results" MODIFIED="1629878600794" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/covidTracker$manage.coverage" NAME="manage Coverage Results" MODIFIED="1618985403049" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

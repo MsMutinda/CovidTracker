@@ -4,17 +4,27 @@ body {
     font-family: "Open Sans", sans-serif;
 }
 
+.home-container {
+    padding: 30px 100px;
+}
+
+.nav-container {
+    margin: 0 80px;
+}
 ul, li {
   display: inline-flex;
-  margin-right: 12px;
+  margin-right: 15px;
   position: relative;
-  bottom: 10px;
+  bottom: 12px;
   flex-wrap: wrap;
 }
  .float-right a:hover {
      color: midnightblue;
  }
 
+ h5 {
+     margin: 0;
+ }
 .card-img-top {
     width: 300px;
 }
